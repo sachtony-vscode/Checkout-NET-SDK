@@ -5,11 +5,11 @@ using System.Net.Http;
 using System.Collections.Generic;
 using BraintreeHttp;
 using Xunit;
-using CheckoutSdk.Test;
-using static CheckoutSdk.Test.TestHarness;
+using CheckoutNetsdk.Test;
+using static CheckoutNetsdk.Test.TestHarness;
 
 
-namespace CheckoutSdk.Orders.Test
+namespace CheckoutNetsdk.Orders.Test
 {
     [Collection("Orders")]
     public class OrdersAuthorizeTest

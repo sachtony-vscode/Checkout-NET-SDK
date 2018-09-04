@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.1": {
+      "BraintreeHttp-Dotnet/0.1.5": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/BraintreeHttp-Dotnet.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/BraintreeHttp-Dotnet.dll": {}
+        }
+      },
       "Microsoft.CodeCoverage/15.8.0": {
         "type": "package",
         "compile": {
@@ -1681,10 +1690,33 @@
         "build": {
           "build/netcoreapp1.0/xunit.runner.visualstudio.props": {}
         }
+      },
+      "Source/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "BraintreeHttp-Dotnet": "0.1.5"
+        },
+        "compile": {
+          "bin/placeholder/Source.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Source.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "BraintreeHttp-Dotnet/0.1.5": {
+      "sha512": "/+vmbq4AYU6JtsXfvWLqHRCDUkSeTjGRapZF9ON9nxMFLfiHDOMF6GkRwfaFZTSYOPJL/9BQlYpD5LZYGsuoHg==",
+      "type": "package",
+      "path": "braintreehttp-dotnet/0.1.5",
+      "files": [
+        "braintreehttp-dotnet.0.1.5.nupkg.sha512",
+        "braintreehttp-dotnet.nuspec",
+        "lib/netstandard2.0/BraintreeHttp-Dotnet.dll"
+      ]
+    },
     "Microsoft.CodeCoverage/15.8.0": {
       "sha512": "NhfNp80eWq5ms7fMrjuRqpwhL1H56IVzXF9d+OIDcEfQ92m1DyE0c+ufUE1ogB09+sYLd58IO4eJ8jyn7AifbA==",
       "type": "package",
@@ -5729,12 +5761,18 @@
         "xunit.runner.visualstudio.2.3.1.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "Source/1.0.0": {
+      "type": "project",
+      "path": "../Source/Source.csproj",
+      "msbuildProject": "../Source/Source.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
       "Microsoft.NET.Test.Sdk >= 15.8.0",
       "Microsoft.NETCore.App >= 2.1.0",
+      "Source >= 1.0.0",
       "xunit >= 2.3.1",
       "xunit.runner.visualstudio >= 2.3.1"
     ]
@@ -5766,7 +5804,11 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/gchockalingam/PayPalProjects/SDKProject/CheckoutNETSDK/Source/Source.csproj": {
+              "projectPath": "/Users/gchockalingam/PayPalProjects/SDKProject/CheckoutNETSDK/Source/Source.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

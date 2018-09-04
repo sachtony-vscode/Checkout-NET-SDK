@@ -1,4 +1,4 @@
-// This class was generated on Tue, 04 Sep 2018 12:18:45 PDT by version 0.1.0-dev+904328-dirty of Braintree SDK Generator
+// This class was generated on Tue, 04 Sep 2018 13:47:44 PDT by version 0.1.0-dev+904328-dirty of Braintree SDK Generator
 // LinkDescription.cs
 // @version 0.1.0-dev+904328-dirty
 // @type object
@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 using System.Collections.Generic;
 
 
-namespace CheckoutNetsdk.Orders
+namespace CheckoutNetsdk.Payments
 {
     /// <summary>
     /// The request-related [HATEOAS link](/docs/api/overview/#hateoas-links) information.
