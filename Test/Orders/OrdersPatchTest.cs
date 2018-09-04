@@ -14,23 +14,41 @@ namespace CheckoutNetsdk.Orders.Test
     [Collection("Orders")]
     public class OrdersPatchTest
     {
-        private List<Patch<T>> buildRequestBody()
+        private List<Patch<string>> buildRequestBody()
         {
-            var jsonContent = new StringContent("{\"from\":\"ph9z4uJ9p VM\",\"op\":\"GVhBtswKSCqs9XzfxH\",\"path\":\"H8K0TeYAWUr Zru4Dh\",\"value\":{}}", Encoding.UTF8, "application/json");
-            return (List<Patch<T>>) new JsonSerializer().DeserializeResponse(jsonContent, typeof(List<Patch<T>>));
+            return new List<Patch<string>>()
+            {
+                new Patch<string>()
+                {
+                    Op = "add",
+                    Path = "/purchase_units/@reference_id=='test_ref_id1'/description",
+                    Value = "added_description"
+                }
+            };
         }
 
         [Fact]
         public async void TestOrdersPatchRequest()
-        {
-            OrdersPatchRequest request = new OrdersPatchRequest("yXrU5B3ZF8c")
-                .Authorization("Fvh2uVJ9RdTC2ai7");
+        {   
+            var response = await OrdersCreateTest.CreateOrder();
+            Order createdOrder = response.Result<Order>();
+            OrdersPatchRequest<string> request = new OrdersPatchRequest<string>(createdOrder.Id);
             request.RequestBody(buildRequestBody());
 
-            HttpResponse response = await TestHarness.client().Execute(request);
-            Assert.Equal((int) response.StatusCode, 204);
+            response = await TestHarness.client().Execute(request);
+            Assert.Equal(204, (int) response.StatusCode);
 
-            // Add your own checks here
+            response = await TestHarness.client().Execute(new OrdersGetRequest(createdOrder.Id));
+            Assert.Equal(200, (int) response.StatusCode);
+
+            Order getOrder = response.Result<Order>();
+
+            PurchaseUnit firstPurchaseUnit = getOrder.PurchaseUnits[0];
+            Assert.Equal("test_ref_id1", firstPurchaseUnit.ReferenceId);
+            Assert.Equal("USD", firstPurchaseUnit.Amount.CurrencyCode);
+            Assert.Equal("100.00", firstPurchaseUnit.Amount.Value);
+            Assert.Equal("added_description", firstPurchaseUnit.Description);
+
         }
     }
 }

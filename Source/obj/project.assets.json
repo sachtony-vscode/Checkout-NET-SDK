@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
+      "BraintreeHttp-Dotnet/0.1.5": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/BraintreeHttp-Dotnet.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/BraintreeHttp-Dotnet.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/1.1.0": {
         "type": "package",
         "compile": {
@@ -29,6 +38,16 @@
     }
   },
   "libraries": {
+    "BraintreeHttp-Dotnet/0.1.5": {
+      "sha512": "/+vmbq4AYU6JtsXfvWLqHRCDUkSeTjGRapZF9ON9nxMFLfiHDOMF6GkRwfaFZTSYOPJL/9BQlYpD5LZYGsuoHg==",
+      "type": "package",
+      "path": "braintreehttp-dotnet/0.1.5",
+      "files": [
+        "braintreehttp-dotnet.0.1.5.nupkg.sha512",
+        "braintreehttp-dotnet.nuspec",
+        "lib/netstandard2.0/BraintreeHttp-Dotnet.dll"
+      ]
+    },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "type": "package",
@@ -172,6 +191,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "BraintreeHttp-Dotnet >= 0.1.5",
       "NETStandard.Library >= 2.0.3"
     ]
   },
@@ -214,6 +234,10 @@
     "frameworks": {
       "netstandard2.0": {
         "dependencies": {
+          "BraintreeHttp-Dotnet": {
+            "target": "Package",
+            "version": "[0.1.5, )"
+          },
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",
