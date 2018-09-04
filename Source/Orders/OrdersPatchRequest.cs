@@ -1,8 +1,8 @@
-// This class was generated on Tue, 04 Sep 2018 11:48:14 PDT by version 0.1.0-dev+904328-dirty of Braintree SDK Generator
+// This class was generated on Tue, 04 Sep 2018 12:18:45 PDT by version 0.1.0-dev+904328-dirty of Braintree SDK Generator
 // OrdersPatchRequest.cs
 // @version 0.1.0-dev+904328-dirty
 // @type request
-// @data H4sIAAAAAAAC/9RX308jNxB+719h+XmVpbTqQ6Q+REBFf9wlhfSkCqJksCfYx67t2uNcU8T/XtneAJukd0cL6vG2Ox7b37fzefbzLX8LLfIht16iDwMHJBSv+DEG4bUjbQ0f8t+cBMLAwLCcx0gBMQWBkUK2ODo7GU1PjhfMerYYTSZn43fpLRBQDAP2u41MgDGWWMwLPazzQZNii6Pxm8kvJ9M9c1jGk3YJyIDI66tYgEhmr96joDC8jAcH3wiCqwbzI3YBhSB7Ad8fZtDoa/P9JW9wSZe8DI42eyQuZYeSX5P6jOljhx7SRwt7Z9V9DPUuxisr1x8B3UsWVnaMtSE0G6AP4c0u/S3kXuRn6BoQ+6dswf48TC56oSDgPBpN4TmwVQykfCmAF7OBiIFsO9fy2cBWzGNrV/iCoOXDQX1NsB2sEQfYgm5egzSC0s5pc/2aPnGwS5pv5GH9a4IOrY1fdj+7mA20WVkt8P/qF/XOv6J+9A/kFf81ol9PwEOLhD7w4cWs4qcIEn0vesuna5csQCCvzTWv+DvwOi3VWYNRJGW9/iv/2HjFf8b1P4z0XcNICAyBkb1Bw5bett0jGumsNsTq1de1hUjqsM4jA17xkfewLoAOKn6GIMemWfPhEpqAKfBH1B4lH5KPWPGJtw49aQx8aGLT3M0q/oP17TbvCZB6GutsUOZa9gjvcJwqZD8eM7vMTqgzR7bzOc/EJ+VgoLLIPe5J59S2YGfDNPdlSg/79shWsQyDBDVR+el8/LZzXp3JSpzAuWbNHHjS0HQM84DHYKMXGLb4fvdRvl3gMeFPFyWpqEeqC+wWpXBIMisVSeUh8NdITFoRWzTEGiuycos4PyidrKZl6QTm/BU0EQdsg5ktrS+GN2UsmN2YvSfVeQ/vXOjq04p0Per5dZf4PapERdjWNfhEJf57hA5IbWtO/ffyAD0UZ8OonLcXqkBR/S6/LIgewU1kl2EeuT83A5Zii9LeH0mHSYuBpauRL/gYdLJ7Dkazu5QVnDUByzopXPEjmy8MHdsEUJdPXb8PuZGfErk3SMrK1GlG06NTXnooH/J6dVgLheLGRqrLtbG+3XTLO17x8xvt7jGd/OlQEMrzfLE7shL58PDg27uv/gYAAP//
+// @data H4sIAAAAAAAC/9RXTW/jNhC991cQcxasYFv0YKAHw0mRfuzaTdwFisSwJ+I44q6kYclhtkaQ/15QlJLINnY3bYI2N/txyHlPMxo93sI7rAnGwE6T8yOLUpSQwTH5whkrhhsYw+9Wo5BX2Kg2TkmJokr0SkpS6+nZyWRxcrxW7NR6Mp+fzd7Hf15Qgh+pPzioApuGRYX2oIdzPhkp1Xo6ezv/9WRxYI9q+cQsnhSKOHMVEhGt+OoDFeLHl+Ho6NtC8Kqi9id1QEmoB4AbLiuszHXzwyVUtJFLSIuTPkfUkjKk+FzKr9g+s+QwPjR/cFc+5JDvc7xivf0M6UFwwbpTbBqhpif6APdZhin0QeZnZCssDm/Zof11nGxwRYmeVqEx4p+DW6ZQ65cieLEcFcEL1yujn41sphzVfEMvSFo/vKivibbFLdGIajTVa2gNXxprTXP9mh6x542s+vZg95qoY83h/z3PLpYj09ywKei/mhf53rcif/QNhAx+C+S2c3RYk5DzML5YZnBKqMntoj+yq3exOUo5wG5hsbXRKnhxprmGDN6jMzHlYwuxMhoy+IW2HbjnJRYlqZ+OFW9a79DZCe6cwQgymDiH25TqKIMzQj1rqi2MN1h5isCfwTjSMBYXKIO5Y0tODHkYN6Gq7pYphrykQ+55zztvs0O7tRgrl7YMuO+uDIVMGoWRapTy8/nsXedVOlsSNaG11VZZdGKw6hS2C448B1eQ39H7/Wf1dsBjwV8uysZxPRDVAftFSRo4eom2IrE8gu6aRGkuQk2NqIqL1t6oeIr6VJpozljFnm3jb7AKNFI9Z7VhlyxijFgr7u3Rk+p8QHdb6OzLHWkH0tu/+8LvWUUpBde2oid24j9naFHK3Z4r/315UB6K0ytK79sLVSB1/b6+tiEGAntkX2G7cv/ejFTE1mkgPmodpZm8ipcJl/gp7NruORQt72KUt9x4SudEOIMptxa7UxsJmvSo8w+eG8jgVMS+JSlZx0kzWUxPIc1QGEN+8yYvSio+cpA8XbTy235a3kEG5x+Nved08pelQkift1ehKWuC8Zuj7+6++RsAAP//
 // DO NOT EDIT
 using System;
 using System.IO;
@@ -27,12 +27,6 @@ namespace CheckoutNetsdk.Orders
             
             this.ContentType =  "application/json";
         }
-        public OrdersPatchRequest Authorization(string Authorization) 
-        {
-            this.Headers.Add("Authorization", Authorization);
-            return this;
-        }
-        
         
         public OrdersPatchRequest<T> RequestBody(List<Patch<T>> PatchRequest)
         {

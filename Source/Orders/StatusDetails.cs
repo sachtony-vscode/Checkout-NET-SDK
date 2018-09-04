@@ -1,8 +1,8 @@
-// This class was generated on Tue, 04 Sep 2018 11:48:14 PDT by version 0.1.0-dev+904328-dirty of Braintree SDK Generator
+// This class was generated on Tue, 04 Sep 2018 12:18:45 PDT by version 0.1.0-dev+904328-dirty of Braintree SDK Generator
 // StatusDetails.cs
 // @version 0.1.0-dev+904328-dirty
 // @type object
-// @data H4sIAAAAAAAC/6yPwUoDMRCG7z7FMOdFPO+tkCpFWYsWLyJkNLMmEJN1JkGC9N2lXViVXnv8v5+Z+eYbd21i7PGxUKkKhguFqNjhE0mg18gDfRx67PCW228wrG8SphJywh53nsHNo5BHKJ5BeKzJgR73XmKHKxFq87WrDh+Y3H2KDfuRovIBfNYg7BawlTyxlMCK/fPiqUVCej/1EybN6Z/lgk5d5wq+fPvr6kmP0W7Xg9kMNxaygL1ebe7Wxp7pk1Rj3L/sL34AAAD//w==
+// @data H4sIAAAAAAAC/6SPQUvDQBCF7/6KYc5BPOcmbJAixKLFiwgZm6lZ2O6uM7PIIv3vUgMRCXjpcb7H8L73hbuaGVt8MrKi4NjIB8UGn0k8vQXu6XjOscF7rr+HY92Lz+ZTxBZ3E8M4v0I6gE0Me8pWhEfIVI8cDfSn4RobvBWhOvfeNPjIND7EULE9UFA+g4/ihccFbCVlFvOs2L4sxmri4/vaVJg0xT++C1pbzxF8TvU/a/AKw7br3aa/GyAJDK7rN50bLp0TSwin19PVNwAAAP//
 // DO NOT EDIT
 using System.Runtime.Serialization;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using System.Collections.Generic;
 namespace CheckoutNetsdk.Orders
 {
     /// <summary>
-    /// The details of the refund status.
+    /// The details of the captured payment status.
     /// </summary>
     [DataContract]
     public class StatusDetails
@@ -22,7 +22,7 @@ namespace CheckoutNetsdk.Orders
         public StatusDetails() {}
 
         /// <summary>
-        /// The reason why the refund has the `PENDING` or `FAILED` status.
+        /// The reason why the captured payment status is `PENDING` or `DENIED`.
         /// </summary>
         [DataMember(Name="reason", EmitDefaultValue = false)]
         public string Reason;
