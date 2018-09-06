@@ -5788,13 +5788,13 @@
       "projectName": "Test",
       "projectPath": "/Users/gchockalingam/PayPalProjects/SDKProject/CheckoutNETSDK/Test/Test.csproj",
       "packagesPath": "/Users/gchockalingam/.nuget/packages/",
-      "outputPath": "/Users/gchockalingam/PayPalProjects/SDKProject/CheckoutNETSDK/Test/obj/",
+      "outputPath": "/Users/gchockalingam/PayPalProjects/SDKProject/CheckoutNETSDK/Test/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/gchockalingam/.nuget/NuGet/NuGet.Config"
+        "/Users/gchockalingam/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
@@ -5822,21 +5822,21 @@
         "dependencies": {
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
-            "version": "[15.8.0, )"
+            "version": "15.8.0"
+          },
+          "xunit": {
+            "target": "Package",
+            "version": "2.3.1"
+          },
+          "xunit.runner.visualstudio": {
+            "target": "Package",
+            "version": "2.3.1"
           },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[2.1.0, )",
+            "version": "2.1",
             "autoReferenced": true
-          },
-          "xunit": {
-            "target": "Package",
-            "version": "[2.3.1, )"
-          },
-          "xunit.runner.visualstudio": {
-            "target": "Package",
-            "version": "[2.3.1, )"
           }
         },
         "imports": [

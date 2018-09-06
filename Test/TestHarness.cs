@@ -1,23 +1,27 @@
 using System;
 using CheckoutNetsdk.Core;
 using BraintreeHttp;
+using Xunit;
+[assembly: CollectionBehavior(MaxParallelThreads = -1)]
+
 namespace CheckoutNetsdk.Test
 {
     public class TestHarness
     {
-        private class TestEnvironment: BraintreeHttp.Environment
+
+        public static PayPalEnvironment environment()
         {
-            public string BaseUrl()
-            {
-                return System.Environment.GetEnvironmentVariable("BASE_URL");
-            }
+            return new SandboxEnvironment("AVNCVvV9oQ7qee5O8OW4LSngEeU1dI7lJAGCk91E_bjrXF2LXB2TK2ICXQuGtpcYSqs4mz1BMNQWuso1", "EDQzd81k-1z2thZw6typSPOTEjxC_QbJh6IithFQuXdRFc7BjVht5rQapPiTaFt5RC-HCa1ir6mi-H5l");
         }
 
         public static HttpClient client()
         {
-            return new CheckoutNetsdkHttpClient(new TestEnvironment());
+            return new PayPalHttpClient(environment());
+        }
+
+        public static HttpClient client(string refreshToken)
+        {
+            return new PayPalHttpClient(environment(), refreshToken);
         }
     }
 }
-
-

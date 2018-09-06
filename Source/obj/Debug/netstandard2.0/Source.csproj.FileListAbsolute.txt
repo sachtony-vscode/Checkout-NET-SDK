@@ -2,3 +2,8 @@
 /Users/gchockalingam/PayPalProjects/SDKProject/CheckoutNETSDK/Source/obj/Debug/netstandard2.0/Source.csproj.CoreCompileInputs.cache
 /Users/gchockalingam/PayPalProjects/SDKProject/CheckoutNETSDK/Source/obj/Debug/netstandard2.0/Source.AssemblyInfoInputs.cache
 /Users/gchockalingam/PayPalProjects/SDKProject/CheckoutNETSDK/Source/obj/Debug/netstandard2.0/Source.AssemblyInfo.cs
+/Users/gchockalingam/PayPalProjects/SDKProject/CheckoutNETSDK/Source/bin/Debug/netstandard2.0/Source.deps.json
+/Users/gchockalingam/PayPalProjects/SDKProject/CheckoutNETSDK/Source/bin/Debug/netstandard2.0/Source.dll
+/Users/gchockalingam/PayPalProjects/SDKProject/CheckoutNETSDK/Source/bin/Debug/netstandard2.0/Source.pdb
+/Users/gchockalingam/PayPalProjects/SDKProject/CheckoutNETSDK/Source/obj/Debug/netstandard2.0/Source.dll
+/Users/gchockalingam/PayPalProjects/SDKProject/CheckoutNETSDK/Source/obj/Debug/netstandard2.0/Source.pdb

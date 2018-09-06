@@ -1,0 +1,19 @@
+﻿<Properties StartupConfiguration="{1ABBF171-0333-4E55-949A-139CB6FAA33C}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Samples/AuthorizeIntentExamples/CaptureOrderSample.cs">
+    <Files>
+      <File FileName="Source/AccessToken.cs" Line="1" Column="1" />
+      <File FileName="Samples/GetOrderSample.cs" Line="36" Column="17" />
+      <File FileName="Samples/AuthorizeIntentExamples/CaptureOrderSample.cs" Line="15" Column="10" />
+      <File FileName="Samples/AuthorizeIntentExamples/AuthorizeOrderSample.cs" Line="40" Column="30" />
+      <File FileName="Source/Payments/AuthorizationsCaptureRequest.cs" Line="20" Column="18" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Samples PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Test PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

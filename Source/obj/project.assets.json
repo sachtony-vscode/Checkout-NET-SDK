@@ -206,13 +206,13 @@
       "projectName": "Source",
       "projectPath": "/Users/gchockalingam/PayPalProjects/SDKProject/CheckoutNETSDK/Source/Source.csproj",
       "packagesPath": "/Users/gchockalingam/.nuget/packages/",
-      "outputPath": "/Users/gchockalingam/PayPalProjects/SDKProject/CheckoutNETSDK/Source/obj/",
+      "outputPath": "/Users/gchockalingam/PayPalProjects/SDKProject/CheckoutNETSDK/Source/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/gchockalingam/.nuget/NuGet/NuGet.Config"
+        "/Users/gchockalingam/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
@@ -236,12 +236,12 @@
         "dependencies": {
           "BraintreeHttp-Dotnet": {
             "target": "Package",
-            "version": "[0.1.5, )"
+            "version": "0.1.5"
           },
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[2.0.3, )",
+            "version": "2.0.3",
             "autoReferenced": true
           }
         },
