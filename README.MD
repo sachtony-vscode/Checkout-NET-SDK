@@ -14,7 +14,7 @@ This is a part of the next major PayPal SDK. It includes a simplified interface 
 
 ## Prerequisites
 
-Java JDK 6 or higher
+.NET 4.0 or later
 
 An environment which supports TLS 1.2 (see the TLS-update site for more information)
 
@@ -93,8 +93,8 @@ public class CreateOrderExample {
 
 ### Capturing an Order
 This will capture an order
-```java
-import com.paypal.orders.*;
+```dotnet
+using CheckoutNetsdk.Orders;
 
 public class CaptureOrderExample {
     static void main(String[] args){
