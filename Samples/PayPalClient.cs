@@ -4,7 +4,7 @@ using BraintreeHttp;
 
 namespace Samples
 {
-    public class SampleSkeleton
+    public class PayPalClient
     {
         public static PayPalEnvironment environment()
         {

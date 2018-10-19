@@ -1,24 +1,25 @@
 ﻿using System;
-using System.IO;
-using System.Text;
-using System.Net.Http;
 using System.Collections.Generic;
-using BraintreeHttp;
-using static Samples.SampleSkeleton;
-using CheckoutNetsdk.Orders;
 using System.Threading.Tasks;
+using BraintreeHttp;
+using CheckoutNetsdk.Core;
+using CheckoutNetsdk.Orders;
 using Samples.CaptureIntentExamples;
 
 namespace Samples
 {
-    public class GetOrderSample : SampleSkeleton
+    public class GetOrderSample
     {
-        public async static Task<HttpResponse> GetOrder(string orderId, bool debug=false)
+        /*
+            This method cn be used to retrieve an order by passing the order id.
+         */
+        public async static Task<HttpResponse> GetOrder(string orderId, bool debug = false)
         {
             OrdersGetRequest request = new OrdersGetRequest(orderId);
 
-            var response = await SampleSkeleton.client().Execute(request);
+            var response = await PayPalClient.client().Execute(request);
             var result = response.Result<Order>();
+            Console.WriteLine("Retrieved Order Status");
             Console.WriteLine("Status: {0}", result.Status);
             Console.WriteLine("Order Id: {0}", result.Id);
             Console.WriteLine("Intent: {0}", result.Intent);
@@ -33,10 +34,17 @@ namespace Samples
             return response;
         }
 
-        //static void Main(string[] args)
-        //{
-        //    HttpResponse createdResponse = CreateOrderSample.CreateOrder().Result;
-        //    GetOrder(createdResponse.Result<Order>().Id).Wait();
-        //}
+        /*
+            This is the driver method which invokes the getOrder function with Order Id
+            to retrieve an order details.
+        
+            To get the correct Order id, we are using the createOrder to create new order
+            and then we are using the newly created order id.
+         */
+        // static void Main(string[] args)
+        // {
+        //     HttpResponse createdResponse = CreateOrderSample.CreateOrder().Result;
+        //     GetOrder(createdResponse.Result<Order>().Id).Wait();
+        // }
     }
 }

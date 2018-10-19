@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
+using Samples;
 using CheckoutNetsdk.Orders;
 using BraintreeHttp;
 
 namespace Samples.AuthorizeIntentExamples
 {
-    public class CreateOrderSample : SampleSkeleton
+    public class CreateOrderSample
     {
+        //Below function can be used to build the create order request body with complete payload.
         private static OrderRequest BuildRequestBody()
         {
             OrderRequest orderRequest = new OrderRequest()
@@ -126,12 +128,14 @@ namespace Samples.AuthorizeIntentExamples
             return orderRequest;
         }
 
+        //Below function can be used to create an order with complete payload.
         public async static Task<HttpResponse> CreateOrder(bool debug=false)
         {
+            Console.WriteLine("Creating Order with complete payload");
             var request = new OrdersCreateRequest();
             request.Prefer("return=representation");
             request.RequestBody(BuildRequestBody());
-            var response = await SampleSkeleton.client().Execute(request);
+            var response = await PayPalClient.client().Execute(request);
 
             if (debug)
             {
@@ -151,9 +155,59 @@ namespace Samples.AuthorizeIntentExamples
             return response;
         }
 
-        //static void Main(string[] args)
-        //{
+        //Below function can be used to build the create order request body with minimum payload.
+        private static OrderRequest BuildRequestBodyWithMinimumFields()
+        {
+            OrderRequest orderRequest = new OrderRequest()
+            {
+                Intent = "AUTHORIZE",
+                PurchaseUnits = new List<PurchaseUnitRequest>
+                {
+                    new PurchaseUnitRequest{
+                        Amount = new AmountWithBreakdown
+                        {
+                            CurrencyCode = "USD",
+                            Value = "230.00"
+                        }
+                        
+                    }
+                }
+            };
+
+            return orderRequest;
+        }
+
+        //Below function can be used to create an order with minimum payload.
+        public async static Task<HttpResponse> CreateOrderWithMinimumFields(bool debug=false)
+        {
+            Console.WriteLine("Create Order with minimum payload..");
+            var request = new OrdersCreateRequest();
+            request.Headers.Add("prefer", "return=representation");
+            request.RequestBody(BuildRequestBodyWithMinimumFields());
+            var response = await PayPalClient.client().Execute(request);
+
+            if (debug)
+            {
+                var result = response.Result<Order>();
+                Console.WriteLine("Status: {0}", result.Status);
+                Console.WriteLine("Order Id: {0}", result.Id);
+                Console.WriteLine("Intent: {0}", result.Intent);
+                Console.WriteLine("Links:");
+                foreach(LinkDescription link in result.Links)
+                {
+                    Console.WriteLine("\t{0}: {1}\tCall Type: {2}", link.Rel, link.Href, link.Method);
+                }
+                AmountWithBreakdown amount = result.PurchaseUnits[0].Amount;
+                Console.WriteLine("Total Amount: {0} {1}", amount.CurrencyCode, amount.Value);
+            }
+
+            return response;
+        }
+
+        // static void Main(string[] args)
+        // {
         //    CreateOrder(true).Wait();
-        //}
+        //    CreateOrderWithMinimumFields(true).Wait();
+        // }
     }
 }

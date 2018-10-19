@@ -2,20 +2,21 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
+using Samples;
 using CheckoutNetsdk.Payments;
 using BraintreeHttp;
 
 namespace Samples.AuthorizeIntentExamples
 {
-    public class CaptureOrderSample : SampleSkeleton
+    public class CaptureOrderSample
     {
-
+        //This method  can be used to capture the payment on the approved authorization.
         public async static Task<HttpResponse> CaptureOrder(string AuthorizationId, bool debug = false)
         {
             var request = new AuthorizationsCaptureRequest(AuthorizationId);
             request.Prefer("return=representation");
             request.RequestBody(new CaptureRequest());
-            var response = await SampleSkeleton.client().Execute(request);
+            var response = await PayPalClient.client().Execute(request);
 
             if (debug)
             {
@@ -32,10 +33,10 @@ namespace Samples.AuthorizeIntentExamples
             return response;
         }
 
-        static void Main(string[] args)
-        {
-            string OrderId = "1B753033X77480819";
-            CaptureOrder(OrderId, true).Wait();
-        }
+        // static void Main(string[] args)
+        // {
+        //     string OrderId = "1B753033X77480819";
+        //     CaptureOrder(OrderId, true).Wait();
+        // }
     }
 }

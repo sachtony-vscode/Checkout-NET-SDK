@@ -2,20 +2,22 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
+using Samples;
 using CheckoutNetsdk.Orders;
 using BraintreeHttp;
 
 namespace Samples.AuthorizeIntentExamples
 {
-    public class AuthorizeOrderSample : SampleSkeleton
+    public class AuthorizeOrderSample
     {
 
+        //This function can be used to perform authorization on the approved order.
         public async static Task<HttpResponse> AuthorizeOrder(string OrderId, bool debug = false)
         {
             var request = new OrdersAuthorizeRequest(OrderId);
             request.Prefer("return=representation");
             request.RequestBody(new OrderActionRequest());
-            var response = await SampleSkeleton.client().Execute(request);
+            var response = await PayPalClient.client().Execute(request);
 
             if (debug)
             {

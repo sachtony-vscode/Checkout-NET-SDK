@@ -2,13 +2,20 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
+using CheckoutNetsdk.Core;
 using CheckoutNetsdk.Orders;
 using BraintreeHttp;
 
 namespace Samples.CaptureIntentExamples
 {
-    public class CreateOrderSample : SampleSkeleton
+    public class CreateOrderSample
     {
+       
+        /*
+            Method to generate sample create order body with <b>CAPTURE</b> intent
+            
+            @return OrderRequest with created order request
+         */
         private static OrderRequest BuildRequestBody()
         {
             OrderRequest orderRequest = new OrderRequest()
@@ -63,10 +70,6 @@ namespace Samples.CaptureIntentExamples
                                     Value = "10.00"
                                 }
                             }
-                        },
-                        Payee = new Payee
-                        {
-                            EmailAddress = "rpenmetsa-us@paypal.com"
                         },
                         Items = new List<Item>
                         {
@@ -130,12 +133,19 @@ namespace Samples.CaptureIntentExamples
             return orderRequest;
         }
 
-        public async static Task<HttpResponse> CreateOrder(bool debug=false)
+        /*
+            Method to create order
+            
+            @param debug true = print response data
+            @return HttpResponse<Order> response received from API
+            @throws IOException Exceptions from API if any
+        */
+        public async static Task<HttpResponse> CreateOrder(bool debug = false)
         {
             var request = new OrdersCreateRequest();
-            request.Prefer("return=representation");
+            request.Headers.Add("prefer", "return=representation");
             request.RequestBody(BuildRequestBody());
-            var response = await SampleSkeleton.client().Execute(request);
+            var response = await PayPalClient.client().Execute(request);
 
             if (debug)
             {
@@ -144,7 +154,7 @@ namespace Samples.CaptureIntentExamples
                 Console.WriteLine("Order Id: {0}", result.Id);
                 Console.WriteLine("Intent: {0}", result.Intent);
                 Console.WriteLine("Links:");
-                foreach(LinkDescription link in result.Links)
+                foreach (LinkDescription link in result.Links)
                 {
                     Console.WriteLine("\t{0}: {1}\tCall Type: {2}", link.Rel, link.Href, link.Method);
                 }
@@ -154,10 +164,13 @@ namespace Samples.CaptureIntentExamples
 
             return response;
         }
-
-        //static void Main(string[] args)
-        //{
-        //    CreateOrder(true).Wait();
-        //}
+        /*
+             This is the driver function which invokes the createOrder function to create
+             an sample order.
+        */
+        // static void Main(string[] args)
+        // {
+        //     CreateOrder(true).Wait();
+        // }
     }
 }
