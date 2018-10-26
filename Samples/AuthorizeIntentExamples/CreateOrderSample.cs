@@ -6,6 +6,10 @@ using Samples;
 using CheckoutNetsdk.Orders;
 using BraintreeHttp;
 
+using System.IO;
+using System.Text;
+using System.Runtime.Serialization.Json;
+
 namespace Samples.AuthorizeIntentExamples
 {
     public class CreateOrderSample
@@ -21,8 +25,8 @@ namespace Samples.AuthorizeIntentExamples
                 {
                     BrandName = "EXAMPLE INC",
                     LandingPage = "BILLING",
-                    CancelUrl = "https://www.google.com",
-                    ReturnUrl = "https://www.google.com",
+                    CancelUrl = "https://www.example.com",
+                    ReturnUrl = "https://www.example.com",
                     UserAction = "CONTINUE",
                     ShippingPreference = "SET_PROVIDED_ADDRESS"
                 },
@@ -36,7 +40,7 @@ namespace Samples.AuthorizeIntentExamples
                         Amount = new AmountWithBreakdown
                         {
                             CurrencyCode = "USD",
-                            Value = "230.00",
+                            Value = "220.00",
                             Breakdown = new AmountBreakdown
                             {
                                 ItemTotal = new Money
@@ -47,7 +51,7 @@ namespace Samples.AuthorizeIntentExamples
                                 Shipping = new Money
                                 {
                                     CurrencyCode = "USD",
-                                    Value = "30.00"
+                                    Value = "20.00"
                                 },
                                 Handling = new Money
                                 {
@@ -136,10 +140,9 @@ namespace Samples.AuthorizeIntentExamples
             request.Prefer("return=representation");
             request.RequestBody(BuildRequestBody());
             var response = await PayPalClient.client().Execute(request);
-
+            var result = response.Result<Order>();
             if (debug)
             {
-                var result = response.Result<Order>();
                 Console.WriteLine("Status: {0}", result.Status);
                 Console.WriteLine("Order Id: {0}", result.Id);
                 Console.WriteLine("Intent: {0}", result.Intent);
@@ -150,8 +153,8 @@ namespace Samples.AuthorizeIntentExamples
                 }
                 AmountWithBreakdown amount = result.PurchaseUnits[0].Amount;
                 Console.WriteLine("Total Amount: {0} {1}", amount.CurrencyCode, amount.Value);
+                Console.WriteLine("Response JSON: \n {0}", PayPalClient.ObjectToJSONString(result));
             }
-
             return response;
         }
 
@@ -161,13 +164,18 @@ namespace Samples.AuthorizeIntentExamples
             OrderRequest orderRequest = new OrderRequest()
             {
                 Intent = "AUTHORIZE",
+                ApplicationContext = new ApplicationContext
+                {
+                    CancelUrl = "https://www.example.com",
+                    ReturnUrl = "https://www.example.com"
+                },
                 PurchaseUnits = new List<PurchaseUnitRequest>
                 {
                     new PurchaseUnitRequest{
                         Amount = new AmountWithBreakdown
                         {
                             CurrencyCode = "USD",
-                            Value = "230.00"
+                            Value = "220.00"
                         }
                         
                     }

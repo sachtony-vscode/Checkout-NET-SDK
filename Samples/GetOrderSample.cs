@@ -30,6 +30,7 @@ namespace Samples
             }
             AmountWithBreakdown amount = result.PurchaseUnits[0].Amount;
             Console.WriteLine("Total Amount: {0} {1}", amount.CurrencyCode, amount.Value);
+            Console.WriteLine("Response JSON: \n {0}", PayPalClient.ObjectToJSONString(result));
 
             return response;
         }

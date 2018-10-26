@@ -44,6 +44,7 @@ namespace Samples.CaptureIntentExamples
                 AmountWithBreakdown amount = result.PurchaseUnits[0].Amount;
                 Console.WriteLine("Buyer:");
                 Console.WriteLine("\tEmail Address: {0}\n\tName: {1}\n\tPhone Number: {2}{3}", result.Payer.EmailAddress, result.Payer.Name.FullName, result.Payer.Phone.CountryCode, result.Payer.Phone.NationalNumber);
+                Console.WriteLine("Response JSON: \n {0}", PayPalClient.ObjectToJSONString(result));
             }
 
             return response;

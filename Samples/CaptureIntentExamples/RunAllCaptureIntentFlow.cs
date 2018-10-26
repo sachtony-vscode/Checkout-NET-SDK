@@ -11,7 +11,7 @@ public class RunAll
     //Rename to Main1 => Main
     static void Main1(string []args){
         Console.WriteLine("Running Capture Intent Flow.."); 
-        var createOrderResponse = Samples.CaptureIntentExamples.CreateOrderSample.CreateOrder().Result;
+        var createOrderResponse = Samples.CaptureIntentExamples.CreateOrderSample.CreateOrder(true).Result;
         var createOrderResult = createOrderResponse.Result<Order>();
                 Console.WriteLine("Status: {0}", createOrderResult.Status);
                 Console.WriteLine("Order Id: {0}", createOrderResult.Id);
@@ -28,7 +28,7 @@ public class RunAll
         Console.Read();
 
         Console.WriteLine("Capturing the payment...");
-        var captureOrderResponse = CaptureOrderSample.CaptureOrder(createOrderResult.Id).Result;
+        var captureOrderResponse = CaptureOrderSample.CaptureOrder(createOrderResult.Id, true).Result;
         var captureOrderResult = captureOrderResponse.Result<Order>();
         var captureId= "";
                 Console.WriteLine("Status: {0}", captureOrderResult.Status);
@@ -53,7 +53,7 @@ public class RunAll
                 captureOrderResult.Payer.Phone.CountryCode, captureOrderResult.Payer.Phone.NationalNumber);
         
         Console.WriteLine("Refunding the Order....");
-        var refundOrderResponse = CapturesRefundSample.CapturesRefund(captureId).Result;
+        var refundOrderResponse = CapturesRefundSample.CapturesRefund(captureId, true).Result;
         var refundOrderResult = refundOrderResponse.Result<CheckoutNetsdk.Payments.Refund>();
                 Console.WriteLine("Status: {0}", refundOrderResult.Status);
                 Console.WriteLine("Refund Id: {0}", refundOrderResult.Id);

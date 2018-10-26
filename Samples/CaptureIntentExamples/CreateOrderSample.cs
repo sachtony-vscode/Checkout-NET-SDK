@@ -26,8 +26,8 @@ namespace Samples.CaptureIntentExamples
                 {
                     BrandName = "EXAMPLE INC",
                     LandingPage = "BILLING",
-                    CancelUrl = "https://www.google.com",
-                    ReturnUrl = "https://www.google.com",
+                    CancelUrl = "https://www.example.com",
+                    ReturnUrl = "https://www.example.com",
                     UserAction = "CONTINUE",
                     ShippingPreference = "SET_PROVIDED_ADDRESS"
                 },
@@ -41,7 +41,7 @@ namespace Samples.CaptureIntentExamples
                         Amount = new AmountWithBreakdown
                         {
                             CurrencyCode = "USD",
-                            Value = "230.00",
+                            Value = "220.00",
                             Breakdown = new AmountBreakdown
                             {
                                 ItemTotal = new Money
@@ -52,7 +52,7 @@ namespace Samples.CaptureIntentExamples
                                 Shipping = new Money
                                 {
                                     CurrencyCode = "USD",
-                                    Value = "30.00"
+                                    Value = "20.00"
                                 },
                                 Handling = new Money
                                 {
@@ -160,6 +160,7 @@ namespace Samples.CaptureIntentExamples
                 }
                 AmountWithBreakdown amount = result.PurchaseUnits[0].Amount;
                 Console.WriteLine("Total Amount: {0} {1}", amount.CurrencyCode, amount.Value);
+                Console.WriteLine("Response JSON: \n {0}", PayPalClient.ObjectToJSONString(result));
             }
 
             return response;

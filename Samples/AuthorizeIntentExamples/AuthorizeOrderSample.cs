@@ -34,6 +34,7 @@ namespace Samples.AuthorizeIntentExamples
                 AmountWithBreakdown amount = result.PurchaseUnits[0].Amount;
                 Console.WriteLine("Buyer:");
                 Console.WriteLine("\tEmail Address: {0}", result.Payer.EmailAddress);
+                Console.WriteLine("Response JSON: \n {0}", PayPalClient.ObjectToJSONString(result));
             }
 
             return response;
