@@ -18,7 +18,7 @@ An environment which supports TLS 1.2 (see the TLS-update site for more informat
 Get client ID and client secret by going to https://developer.paypal.com/developer/applications and generating a REST API app. Get <b>Client ID</b> and <b>Secret</b> from there.
 
 ```dotnet
-using CheckoutNetsdk.Core;
+using PayPalCheckoutSdk.Core;
 
 public class Credentials {
     static String clientId = "CLIENT-ID";
@@ -37,7 +37,7 @@ public class Credentials {
 This will create an order and print order id for the created order
 
 ```dotnet
-using CheckoutNetsdk.Orders;
+using PayPalCheckoutSdk.Orders;
 
 public class CreateOrderExample {
     static void main(String[] args){
@@ -88,7 +88,7 @@ public class CreateOrderExample {
 ### Capturing an Order
 This will capture an order
 ```dotnet
-using CheckoutNetsdk.Orders;
+using PayPalCheckoutSdk.Orders;
 
 public class CaptureOrderExample {
     static void main(String[] args){

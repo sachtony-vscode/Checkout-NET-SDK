@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 
 using Samples;
-using CheckoutNetsdk.Orders;
+using PayPalCheckoutSdk.Orders;
 using BraintreeHttp;
 
 using System.IO;

@@ -9,7 +9,7 @@
     <Compile Remove="Program.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Source\Source.csproj" />
+    <ProjectReference Include="..\PayPalCheckoutSdk\PayPalCheckoutSdk.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CaptureIntentExamples\" />

@@ -1,10 +1,10 @@
 using System;
-using CheckoutNetsdk.Core;
+using PayPalCheckoutSdk.Core;
 using BraintreeHttp;
 using Xunit;
 [assembly: CollectionBehavior(MaxParallelThreads = -1)]
 
-namespace CheckoutNetsdk.Test
+namespace PayPalCheckoutSdk.Test
 {
     public class TestHarness
     {

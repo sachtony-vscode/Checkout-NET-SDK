@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 
 using Samples;
-using CheckoutNetsdk.Payments;
+using PayPalCheckoutSdk.Payments;
 using BraintreeHttp;
 
 namespace Samples.AuthorizeIntentExamples
