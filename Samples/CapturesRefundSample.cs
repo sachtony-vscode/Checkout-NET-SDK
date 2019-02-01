@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-using CheckoutNetsdk.Core;
-using CheckoutNetsdk.Payments;
+using PayPalCheckoutSdk.Core;
+using PayPalCheckoutSdk.Payments;
 using BraintreeHttp;
 
 namespace Samples

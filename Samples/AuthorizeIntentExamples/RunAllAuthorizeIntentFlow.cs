@@ -1,8 +1,8 @@
 using System;
 
 using Samples.AuthorizeIntentExamples;
-using CheckoutNetsdk.Orders;
-using CheckoutNetsdk.Payments;
+using PayPalCheckoutSdk.Orders;
+using PayPalCheckoutSdk.Payments;
 
 namespace Samples
 {
@@ -17,7 +17,7 @@ public class RunAllAuthorizeIntentFlow
                 Console.WriteLine("Order Id: {0}", createOrderResult.Id);
                 Console.WriteLine("Intent: {0}", createOrderResult.Intent);
                 Console.WriteLine("Links:");
-                foreach (CheckoutNetsdk.Orders.LinkDescription link in createOrderResult.Links)
+                foreach (PayPalCheckoutSdk.Orders.LinkDescription link in createOrderResult.Links)
                 {
                     Console.WriteLine("\t{0}: {1}\tCall Type: {2}", link.Rel, link.Href, link.Method);
                 }
@@ -36,7 +36,7 @@ public class RunAllAuthorizeIntentFlow
                 Console.WriteLine("Authorization Id: {0}", authorizeOrderResult.PurchaseUnits[0].Payments.Authorizations[0].Id);
                 Console.WriteLine("Intent: {0}", authorizeOrderResult.Intent);
                 Console.WriteLine("Links:");
-                foreach (CheckoutNetsdk.Orders.LinkDescription link in authorizeOrderResult.Links)
+                foreach (PayPalCheckoutSdk.Orders.LinkDescription link in authorizeOrderResult.Links)
                 {
                     Console.WriteLine("\t{0}: {1}\tCall Type: {2}", link.Rel, link.Href, link.Method);
                 }
@@ -46,22 +46,22 @@ public class RunAllAuthorizeIntentFlow
 
         Console.WriteLine("Capturing the payment...");
         var captureOrderResponse = CaptureOrderSample.CaptureOrder(authorizationId).Result;
-        var captureOrderResult = captureOrderResponse.Result<CheckoutNetsdk.Payments.Capture>();
+        var captureOrderResult = captureOrderResponse.Result<PayPalCheckoutSdk.Payments.Capture>();
                 Console.WriteLine("Status: {0}", captureOrderResult.Status);
                 Console.WriteLine("Capture Id: {0}", captureOrderResult.Id);
                 Console.WriteLine("Links:");
-                foreach (CheckoutNetsdk.Payments.LinkDescription link in captureOrderResult.Links)
+                foreach (PayPalCheckoutSdk.Payments.LinkDescription link in captureOrderResult.Links)
                 {
                     Console.WriteLine("\t{0}: {1}\tCall Type: {2}", link.Rel, link.Href, link.Method);
                 }
             
         Console.WriteLine("Refunding the Order....");
         var refundOrderResponse = CapturesRefundSample.CapturesRefund(captureOrderResult.Id).Result;
-        var refundOrderResult = refundOrderResponse.Result<CheckoutNetsdk.Payments.Refund>();
+        var refundOrderResult = refundOrderResponse.Result<PayPalCheckoutSdk.Payments.Refund>();
                 Console.WriteLine("Status: {0}", refundOrderResult.Status);
                 Console.WriteLine("Refund Id: {0}", refundOrderResult.Id);
                 Console.WriteLine("Links:");
-                foreach (CheckoutNetsdk.Payments.LinkDescription link in refundOrderResult.Links)
+                foreach (PayPalCheckoutSdk.Payments.LinkDescription link in refundOrderResult.Links)
                 {
                     Console.WriteLine("\t{0}: {1}\tCall Type: {2}", link.Rel, link.Href, link.Method);
                 }

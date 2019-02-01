@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 using BraintreeHttp;
 using Xunit;
 using Xunit.Abstractions;
-using CheckoutNetsdk.Test;
-using static CheckoutNetsdk.Test.TestHarness;
+using PayPalCheckoutSdk.Test;
+using static PayPalCheckoutSdk.Test.TestHarness;
 
 
-namespace CheckoutNetsdk.Orders.Test
+namespace PayPalCheckoutSdk.Orders.Test
 {
     [Collection("Orders")]
     public class OrdersCreateTest

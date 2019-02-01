@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-using CheckoutNetsdk.Core;
-using CheckoutNetsdk.Orders;
+using PayPalCheckoutSdk.Core;
+using PayPalCheckoutSdk.Orders;
 using BraintreeHttp;
 
 namespace Samples.CaptureIntentExamples

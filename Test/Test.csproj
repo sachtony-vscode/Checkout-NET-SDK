@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Source\Source.csproj" />
+    <ProjectReference Include="..\PayPalCheckoutSdk\PayPalCheckoutSdk.csproj" />
   </ItemGroup>
 
 </Project>

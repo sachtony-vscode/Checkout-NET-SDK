@@ -5,11 +5,11 @@ using System.Net.Http;
 using System.Collections.Generic;
 using BraintreeHttp;
 using Xunit;
-using CheckoutNetsdk.Test;
-using static CheckoutNetsdk.Test.TestHarness;
+using PayPalCheckoutSdk.Test;
+using static PayPalCheckoutSdk.Test.TestHarness;
 
 
-namespace CheckoutNetsdk.Orders.Test
+namespace PayPalCheckoutSdk.Orders.Test
 {
     [Collection("Orders")]
     public class OrdersCaptureTest
