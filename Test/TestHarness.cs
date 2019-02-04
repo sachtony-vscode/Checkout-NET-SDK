@@ -11,7 +11,11 @@ namespace PayPalCheckoutSdk.Test
 
         public static PayPalEnvironment environment()
         {
-            return new SandboxEnvironment("<<PAYPAL-CLIENT-ID>>", "<<PAYPAL-CLIENT-SECRET>>");
+            return new SandboxEnvironment(
+                System.Environment.GetEnvironmentVariable("PAYPAL_CLIENT_ID") != null ?
+                 System.Environment.GetEnvironmentVariable("PAYPAL_CLIENT_ID"):"<<PAYPAL-CLIENT-ID>>",
+                System.Environment.GetEnvironmentVariable("PAYPAL_CLIENT_SECRET") != null ?
+                 System.Environment.GetEnvironmentVariable("PAYPAL_CLIENT_SECRET"):"<<PAYPAL-CLIENT-SECRET>>");
         }
 
         public static HttpClient client()
