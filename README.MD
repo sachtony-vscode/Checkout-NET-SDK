@@ -18,17 +18,27 @@ An environment which supports TLS 1.2 (see the TLS-update site for more informat
 Get client ID and client secret by going to https://developer.paypal.com/developer/applications and generating a REST API app. Get <b>Client ID</b> and <b>Secret</b> from there.
 
 ```dotnet
+using System;
 using PayPalCheckoutSdk.Core;
+using PayPalCheckoutSdk.Orders;
+using BraintreeHttp;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-public class Credentials {
-    static String clientId = "CLIENT-ID";
-    static String secret = "CLIENT-SECRET";
-    
+public class CaptureOrderSample 
+{
+    static String clientId = "PAYPAL-CLIENT-ID";
+    static String secret = "PAYPAL-CLIENT-SECRET";
+
+    public static HttpClient client()
+    {
     // Creating a sandbox environment
-    var environment = new SandboxEnvironment(clientId, secret);
-    
+    PayPalEnvironment environment = new SandboxEnvironment(clientId, secret);
+
     // Creating a client for the environment
-    var client = new PayPalHttpClient(environment);
+    PayPalHttpClient client = new PayPalHttpClient(environment);
+    return client;
+    }
 }
 ```
 
@@ -37,11 +47,9 @@ public class Credentials {
 This will create an order and print order id for the created order
 
 ```dotnet
-using PayPalCheckoutSdk.Orders;
-
-public class CreateOrderExample {
-    static void main(String[] args){
-        
+public async static Task<HttpResponse> createOrder()
+ {
+         HttpResponse response;
         // Construct a request object and set desired parameters
         // Here, OrdersCreateRequest() creates a POST request to /v2/checkout/orders
         var order = new OrderRequest() {
@@ -50,68 +58,56 @@ public class CreateOrderExample {
                 {
                     new PurchaseUnitRequest()
                     {
-                        ReferenceId = "test_ref_id1",
                         Amount = new AmountWithBreakdown()
                         {
                             CurrencyCode = "USD",
                             Value = "100.00"
                         }
                     }
-                }, 
+                },
                 ApplicationContext = new ApplicationContext()
                 {
                     ReturnUrl = "https://www.example.com",
                     CancelUrl = "https://www.example.com"
                 }
             };
-        
-        
+
+
             // Call API with your client and get a response for your call
             var request = new OrdersCreateRequest();
             request.Prefer("return=representation");
             request.RequestBody(order);
-            try 
+            response = await client().Execute(request);
+            var statusCode = response.StatusCode;
+            Order result = response.Result<Order>();
+            Console.WriteLine("Status: {0}", result.Status);
+            Console.WriteLine("Order Id: {0}", result.Id);
+            Console.WriteLine("Intent: {0}", result.Intent);
+            Console.WriteLine("Links:");
+            foreach (LinkDescription link in result.Links)
             {
-              HttpResponse response = await client().Execute(request);
-              var statusCode = response.StatusCode;
-              Order result = response.Result<Payment>();
-            } 
-            catch(HttpException httpException) 
-            {
-              var statusCode = httpException.StatusCode;
-              var debugId = httpException.Headers.GetValues("PayPal-Debug-Id").FirstOrDefault();
+                 Console.WriteLine("\t{0}: {1}\tCall Type: {2}", link.Rel, link.Href, link.Method);
             }
+            return response;
     }
-}
 ```
 
 ### Capturing an Order
-This will capture an order
+Before capturing an order, order should be approved by the buyer using the approve link in create order response
 ```dotnet
-using PayPalCheckoutSdk.Orders;
-
-public class CaptureOrderExample {
-    static void main(String[] args){
-        
+  public async static Task<HttpResponse> captureOrder()
+    {
             // Construct a request object and set desired parameters
-            // Here, OrdersCaptureRequest() creates a POST request to /v2/checkout/orders
-            // Replace ORDER-ID with the order id from create order
-            var request = new OrdersCaptureRequest("ORDER-ID");
-            
-            request.RequestBody(order);
-            try 
-            {
-              HttpResponse response = await client().Execute(request);
-              var statusCode = response.StatusCode;
-              Order result = response.Result<Payment>();
-            } 
-            catch(HttpException httpException) 
-            {
-              var statusCode = httpException.StatusCode;
-              var debugId = httpException.Headers.GetValues("PayPal-Debug-Id").FirstOrDefault();
-            }
+            // Replace ORDER-ID with the approved order id from create order
+            var request = new OrdersCaptureRequest("69E54436G09638353");
+            request.RequestBody(new OrderActionRequest());
+            HttpResponse response = await client().Execute(request);
+            var statusCode = response.StatusCode;
+            Order result = response.Result<Order>();
+            Console.WriteLine("Status: {0}", result.Status);
+            Console.WriteLine("Capture Id: {0}", result.Id);
+            return response;
     }
-}
 ```
 ## Running tests
 
