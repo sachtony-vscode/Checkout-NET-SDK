@@ -14,6 +14,11 @@ An environment which supports TLS 1.2 (see the TLS-update site for more informat
 
 ## Usage
 
+### Binaries
+
+It is not mandatory to fork this repository for using the PayPal SDK. You can refer [PayPal Checkout Server SDK](https://developer.paypal.com/docs/checkout/reference/server-integration) for configuring and working with SDK without forking this code.
+
+For contirbuting or referrring the samples, You can fork/refer this repository. 
 ### Setting up credentials
 Get client ID and client secret by going to https://developer.paypal.com/developer/applications and generating a REST API app. Get <b>Client ID</b> and <b>Secret</b> from there.
 
@@ -113,16 +118,16 @@ Before capturing an order, order should be approved by the buyer using the appro
 
 To run integration tests using your client id and secret, run the `test` gradle command with the `-Pintegration` flag
 ```sh
-$ dotnet test -v normal
+$ PAYPAL_CLIENT_ID=YOUR_SANDBOX_CLIENT_ID PAYPAL_CLIENT_SECRET=YOUR_SANDBOX_CLIENT_SECRET dotnet test -v normal
 ```
 
 You may use the client id and secret above for demonstration purposes.
 
-
-*NOTE*: This SDK is still in beta, is subject to change, and should not be used in production.
 
 ## Samples
 
 You can start off by trying out [creating and capturing an order](/Samples/CaptureIntentExamples/RunAll.java).
 
 To try out different samples for both create and authorize intent head to [this link](/Samples).
+
+Note: Update the `PayPalClient.cs` with your sandbox client credentials or pass your client credentials as environment variable whie executing the samples.
