@@ -134,3 +134,7 @@ You can start off by trying out [creating and capturing an order](/Samples/Captu
 To try out different samples for both create and authorize intent head to [this link](/Samples).
 
 Note: Update the `PayPalClient.cs` with your sandbox client credentials or pass your client credentials as environment variable whie executing the samples.
+
+
+## License
+Code released under [SDK LICENSE](LICENSE)  
