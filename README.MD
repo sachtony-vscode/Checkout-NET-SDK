@@ -11,9 +11,11 @@ Please refer to the [PayPal Checkout Integration Guide](https://developer.paypal
 
 ## Prerequisites
 
-.NET 4.0 or later
+.NET 4.6.1 or later
 
 An environment which supports TLS 1.2 (see the TLS-update site for more information)
+
+BraintreeHttp-Dotnet 0.1.5
 
 ## Usage
 
