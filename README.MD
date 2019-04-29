@@ -11,9 +11,11 @@ Please refer to the [PayPal Checkout Integration Guide](https://developer.paypal
 
 ## Prerequisites
 
-.NET 4.0 or later
+.NET 4.6.1 or later
 
 An environment which supports TLS 1.2 (see the TLS-update site for more information)
+
+BraintreeHttp-Dotnet 0.3.0
 
 ## Usage
 
@@ -134,3 +136,7 @@ You can start off by trying out [creating and capturing an order](/Samples/Captu
 To try out different samples for both create and authorize intent head to [this link](/Samples).
 
 Note: Update the `PayPalClient.cs` with your sandbox client credentials or pass your client credentials as environment variable whie executing the samples.
+
+
+## License
+Code released under [SDK LICENSE](LICENSE)  
