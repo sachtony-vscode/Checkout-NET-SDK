@@ -15,7 +15,7 @@ Please refer to the [PayPal Checkout Integration Guide](https://developer.paypal
 
 An environment which supports TLS 1.2 (see the TLS-update site for more information)
 
-BraintreeHttp-Dotnet 0.1.5
+BraintreeHttp-Dotnet 0.3.0
 
 ## Usage
 
