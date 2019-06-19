@@ -27,7 +27,7 @@ namespace Samples.CaptureIntentExamples
                 var result = response.Result<Order>();
                 Console.WriteLine("Status: {0}", result.Status);
                 Console.WriteLine("Order Id: {0}", result.Id);
-                Console.WriteLine("Intent: {0}", result.Intent);
+                Console.WriteLine("Intent: {0}", result.CheckoutPaymentIntent);
                 Console.WriteLine("Links:");
                 foreach (LinkDescription link in result.Links)
                 {
@@ -41,9 +41,9 @@ namespace Samples.CaptureIntentExamples
                         Console.WriteLine("\t {0}", capture.Id);
                     }
                 }
-                AmountWithBreakdown amount = result.PurchaseUnits[0].Amount;
+                AmountWithBreakdown amount = result.PurchaseUnits[0].AmountWithBreakdown;
                 Console.WriteLine("Buyer:");
-                Console.WriteLine("\tEmail Address: {0}\n\tName: {1}\n\tPhone Number: {2}{3}", result.Payer.EmailAddress, result.Payer.Name.FullName, result.Payer.Phone.CountryCode, result.Payer.Phone.NationalNumber);
+                Console.WriteLine("\tEmail Address: {0}\n\tName: {1}\n\tPhone Number: {2}{3}", result.Payer.Email, result.Payer.Name.FullName, result.Payer.PhoneWithType.PhoneNumber.CountryCallingCode, result.Payer.PhoneWithType.PhoneNumber.NationalNumber);
                 Console.WriteLine("Response JSON: \n {0}", PayPalClient.ObjectToJSONString(result));
             }
 

@@ -1,8 +1,8 @@
-// This class was generated on Tue, 04 Sep 2018 12:18:45 PDT by version 0.1.0-dev+904328-dirty of Braintree SDK Generator
+// This class was generated on Tue, 21 May 2019 11:25:19 PDT by version 0.1.0-dev+8fcb5f of Braintree SDK Generator
 // ApplicationContext.cs
-// @version 0.1.0-dev+904328-dirty
+// @version 0.1.0-dev+8fcb5f
 // @type object
-// @data H4sIAAAAAAAC/8RXX28bRRB/51OMjhci+XxpUoLqt6rlAQFtFAovobIme+O7Vde7y8xu3Cviu6Pd811yPgOVMOHJuvm385v//r1413kqVsVL741WGLSz8MrZQB9DsSh+QdZ4Z+gNbpNQsSi+p+7h4zWJYu2TUrEqXkUJbqs/kUBoCTx2xEAfPbEmqwjqyNo2mYfes7tHA56dIhHYOB6UtmQD7HRo4Rq7azTLYlG8ZMau9/R8UdwQ1m+t6YrVBo1QIvwWNVM9Eq7ZeeKgSYrV7YhRQnJgDuuO0dZrmz4eA5yQp1DftQQG78hAaDGAuydmXe+B30XRNoFKqqBtJvZYAJVy0QZwE6roQP8Wpo3G/LH4R6wKrSKzjmwmWCfkOdafb36AXUtM2WuVE00MWoCp1kwqUA24CcRTgd6sPE7tE+E0aGttm7XHZprVA8Yca+g8gdvAXhCSIAQH0rrdkbzl0n0A3JL64OKToXQKzQG+gTRHdmvQNjHDweb9V20IXlZVFZwzstQUNkvHTdWGranulH/+zZdCKqmXF2djg44mtIVdq1WbQpPf1J/66iBmxyWTwVQUveeyAImqBRTYkgg2JAvQIjH9oq1BYtOQ5CrKT8oSci6wSUW2xZog+pSV9MLtdz+9havLF+XFgzvK1fQAabfbLY1Ty8bdVxLQ1si1VFpc1qp866uksDZawtK3/myRDbscLTT5hfLZ1y8unkMfxGnEkvlodTKRQ6bFZeFsNNmUZYriWY9tcLm8fHZ1BWh8i+UF5DnA3d7xqnZKKm0DNZyHcNW3VcUkodrLlklWqrMTF9f1fub+SKF19bzI9o273g78h2KbseZFN7ZGCsWWWLVowzjnPdOGOK0H+e/nfNpItO6fTFYOkBzw5lAG78tRbMQhLvIJMHxm2+fVuhYyefDOcExYf52RcpAaUfRpHIbcmKyTraf3n4ctl1RwH8geLbaBM0eW+odT/yqjyYayIUucx1DWeaLsMIXIdrZiJ+TTrdj+lKL/Y8dKq73Pu3Ts4gni4/w59EHu0TRY/RrPzy9VNPmX+i+j+6/XWrzBroc8KmNdc7q6gpsEaNnrVoPy1NS3NuGRaUiDA9U6JwRoR7NHLra/tXxDKWwqHNjesNtCaqtmvIX3Dzw6j/dpLA/P5CfKaxTidb+HJ/mc0g+Of2c3uolMAgh9JCSws00fjfSXQtu4j1H1mAWOjyhcYwdv3O6Y/HBjwca43Ynm0hd/AgAA//8=
+// @data H4sIAAAAAAAC/7xYT4/buhG/91MQ7qUL2FaySVNkb8Emh6Btski3vaQLY5YaScRSJDNDreMU+e4FSUnWv33Jw3N8saHhkJzf/OPM/G91e3C4ulq9cU4rCV5ZI66t8fjVr9ar/wApuNf4AerAtFqv/o6H48dbZEnKhU2rq9V1w97W6huy8BUKBwckgV8dkkIjUeQNKVPGNXCO7CNo4chKZBaFpW5TjcaLvfKVuIHDDejtf5tnz17Ie23lw5fGeozf6VeyJ2vKRPlgPV4lcjakixsgb5BYgMnFP4Ee0DsNElnUqqy8kNYUqmwIRdotbd5eck9g8p2Bur0uOy7Fw6b8XCnnlCl3jrBACrDnG1s9uCSVACltY7xg9I1bi32lZCXsIxKpvFUl4ZcG2YtH0A1yq5BsqpHVevWGCA7Jos/Wq08I+UejD6urAjRjIHxpFGHeE27IOiSvkFdXn3tfYB8EnJv/qI2RI4zIY5e4rVBouEctfAV+guq+YWWC8cNWoUwkJpv3SrEjKiuP2z8I0zRaf1//EKsEI1HvGtIjrCPyHOu/P/1D7CskjFLLGBBIQrEgzBWh9JgLKDzSmCEdy8MQODHOa61CXHWuHgN9AXXk2k25BviXGSaJYOGu5AASnG+oSxBk80Z6UWi7T7HJDqUqlBxkDU4bQTQc9GRrp9EjCwh6cqCFJzAMMtyx/eURAE6N1JG+537gSNVABwFOBcFz4a3wpMoS+zR3Ytkn5r5pdfuuV+QcDA7XjphG5CVo6eQfm8gaAV3kntVKsgJjcBK4PW0BUvvoBEcULaPwB3euXIPG02HnrDJ+bIkR/Wm5a/SVzVv1V5YxuBt7ID96U9u39kyg2lt3SbgRrtnSGNrNDFaMn86xIqahP4nbSnFIoYJtjV7VyOIeRa6K+AQHJUB6RqJCRVSoUEWnMDBluKFCRaJWJh8WKrJC+WCb5Bvn0lyKsF24cqy38cLTsRkd+YwOHBS5OyaEueRPMMwRRJMMasaIpCsOT59LIr67n0CojMcyvWQ7IK8KkONYfYJhjPB9jsarQiH1mNgWfg+xYADfvQsVcLDlo8qT66MJokT+wT1ndsdQwS66Y7swMebBhSegGGUgkBKdD7WOYKubs1pQg8ljZQ7lGMZkYe6TIZACkpZRBMaYYSu7XyhQo2mPlV2bQM5kLG0l6Am+jjRH9lmDKZsIB8q7v1TeO77KMm+t5q1CX2wtlVnla53dS/fyb39mjGG3ubzoHbg/Qpm2d/FWxDvVt+SySGRpQ6ghVL9Jcl4LbmQlgEWNzFAir4VibsJ/LAWbskSO5XK8kkOaj3KGarqGHEXjOv/6/P5fH8WrF683l0dxglceIe33+622clvax4w9mBwo50yxjbsyV7nYoe20Yr91lbtYx4Nt1BboeMPm+V9fX74USYljjYXjG6PCEVFlim1kjoeGM3kbtHiRsHUib148f/VKgHYVbC5FbHjo0Aqe5VZyNoj2LPUPGSH7rOXdBF7OLk7sXLP3+WRP++2w6QmqqJHCA+wHRUrXOPOvLxQdHBDbXj2cMkEyWZtD6aTf9Gw9DrYNnQDDzxdbSDtGHTvMGY7R0tMW2XRc08qyTXK9sU7Wh9/9jkLS2wc0i87WrcyRhfihEL+pb92UaJBiGop7zmQdQt+Qmc0SRuTTzRLSbA1/5TDhKaAL468R4uX1OfSOb5AN2sFeo4fTP63S11vFTsMhQe43Q54TMsfee6CgbnzWbR4f9S6WWjxWaeg+KhsaKzD9sQujqd88+RMGtUk/ObsgW6cmpB+OthcM2pDWjJvp3HT5xqzT0hmr//RKz4v+nj4ZEXUjVxYg5qPca2u8Mg0uTXMtLWy4gYP4YPdL/Kdv4e6+/+n/AAAA//8=
 // DO NOT EDIT
 using System.Runtime.Serialization;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using System.Collections.Generic;
 namespace PayPalCheckoutSdk.Orders
 {
     /// <summary>
-    /// Customizes the payer experience during the approval process for the payment with PayPal.
+    /// Customizes the payer experience during the approval process for the payment with PayPal.<blockquote><strong>Note:</strong> Partners and Marketplaces might configure <code>brand_name</code> and <code>shipping_preference</code> during partner account setup, which overrides the request values.</blockquote>
     /// </summary>
     [DataContract]
     public class ApplicationContext
@@ -32,6 +32,12 @@ namespace PayPalCheckoutSdk.Orders
         /// </summary>
         [DataMember(Name="cancel_url", EmitDefaultValue = false)]
         public string CancelUrl;
+
+        /// <summary>
+        /// Client configuration that captures the product flows and specific experiences that a user completes a paypal transaction.
+        /// </summary>
+        [DataMember(Name="client_configuration", EmitDefaultValue = false)]
+        public ClientConfiguration ClientConfiguration;
 
         /// <summary>
         /// The type of landing page to show on the PayPal site for customer checkout.
@@ -64,7 +70,7 @@ namespace PayPalCheckoutSdk.Orders
         public string ReturnUrl;
 
         /// <summary>
-        /// The shipping preference:<ul><li>Displays the shipping address to the customer.</li><li>Enables the customer to choose an address on the PayPal site.</li><li>Restricts the customer from changing the address during the payment-approval process.
+        /// The shipping preference:<ul><li>Displays the shipping address to the customer.</li><li>Enables the customer to choose an address on the PayPal site.</li><li>Restricts the customer from changing the address during the payment-approval process.</li></ul>
         /// </summary>
         [DataMember(Name="shipping_preference", EmitDefaultValue = false)]
         public string ShippingPreference;

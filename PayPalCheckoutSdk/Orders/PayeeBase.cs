@@ -1,8 +1,8 @@
-// This class was generated on Tue, 04 Sep 2018 12:18:45 PDT by version 0.1.0-dev+904328-dirty of Braintree SDK Generator
-// MerchantBase.cs
-// @version 0.1.0-dev+904328-dirty
+// This class was generated on Tue, 21 May 2019 11:25:19 PDT by version 0.1.0-dev+8fcb5f of Braintree SDK Generator
+// PayeeBase.cs
+// @version 0.1.0-dev+8fcb5f
 // @type object
-// @data H4sIAAAAAAAC/7xUwW4TMRC98xWjPYEUpVVLOeQEVQ9UiFKhwAVQNbHfZq167e3YTrqg/juynbZJIwQSiEskP2d25r15zz+a+TigmTXvIapjF+mUA5pJ85nF8MLigvt83UyadxgfD2cISswQjXfNrJl3II3IxgZqvVDsQP39B9edJ4GCWSGUmzY5HYidpjbZ1lhbYS8aMqX5dq0JxDZ4unZ+7YjrHwcegWkzad6I8FjnP5w0H8H6g7NjM2vZBmTgJhmBfgAuxQ+QaBCa2ZcH5iGKcct9ysoauHhl9A73bXRfhCEtrFFkNFw0rYEUOXgYSAk4QtNi3FHnoJKhcxfF66SgKXoKaRi8REoBpDgg0PP8HUyXUzoVNm4uABkXsRTO7WltYkeXPF6yfUHrDrKRidCzsVestSAE8vLQ+croLK/zkXjFxmbmfyuqS9beTX6r7M5MO+o+vdlXOJMWV0izNd+hK0Pa1Ey/psPDY7WwXl3fJB9RzvVXhSjeLSty4SNmFT7YxunTkDfw6iWpjoVVhARiAbG1fp0XiNbno9N0dHLyq39xG1FzUHsorzejvN40fUQomKWb0lu/xgoyKVVLOAhbOxIrhSE7p+db06eeLNwydtVYbpd9XujRyfboNU8Dx6warSDZlTlGHHN1ckUk/adTEm5NiPcqHzyV+f/YZ8vBO+bZxfetU+NRciF0fjahdWdUV94Y6jlcQ2eBQo6Tb8sWNhWslE8ukkv9AlIs6DR0WUGOaAlf7IxoGrhwqbI/rQskKB0WdiQ4JWNZbLYS0yB+EIPIMtIqE3Yxj5Gf4+OjXJtCfRzg8lLKfIKQbPwnqf129+wnAAAA//8=
+// @data H4sIAAAAAAAC/7xUwW7bOBC971cMdFacINnswafdIIcNCqRB4fbSFvaYfLKIUKQyJO2oRf69IOW4dtyiBVr0IkCPHMx7b+bxczUbelTTqucBmC85oKqrdyyGlxa33B2dvcKwhau6ukZQYvpovKum1awFaUQ2NlDjhWIL6iCqZRdp03oSKJg1QjlpktOB2Glqkm2MtSPsRUMmNNuvNYHYBk/3zm8c8XixsJpUdfWfCA+jjLO6egPWr50dqmnDNiADD8kI9A64E99DokGopu93BoQoxq2OxStr4OLc6APt++ixCX1aWqPo5npnQyF7Ql52ok6UgCM0cd9P6MZF8TopaIqeQup7L5FSACkOCDWFpNqs/ErYuJkAZFzESji3pY2JLd3xcMe2pk0L2XakBTo2ds5aC0JYZAKLZwZzoxfZWucj8ZqNzap/1VCXrH2qf+hqoXXg6AHRb7qaBYsrgtmaT9BUamhbM/mQzs4u1NJ6df+QfET5H78qRPFuNSK3PmI6wqf7OL3ts/n//E2qZWEVIYFYQGyt30DTEo3Pv07T+eXl925xEzEOfeyhvN5S+Xfb9CtCwazchP73G6whdalawUHY2oFYKfR5RTp+NF3qyMKtYluWit2h+jzI88t96mOGeo7ZNVpDTGNK9Djm6uSKSfpnWRIeTYjPLp++tPnPrM3e6h4szyF+vDpjNEomhG6uc0aMasu7Qh2He+hsUMhR8k2ZwraClfLJRXKpW0LKCjoNXUaQ01mCF1sjmnouWkbbX9YFEpQOSzsQnJKhDDavElMvvheDyDLQOgt2MdO44oCL81ybwvguwOWhFH6CkGz8LWn9+PTXFwAAAP//
 // DO NOT EDIT
 using System.Runtime.Serialization;
 using System.Collections.Generic;
@@ -14,15 +14,15 @@ namespace PayPalCheckoutSdk.Orders
     /// The details for the merchant who receives the funds and fulfills the order. The merchant is also known as the payee.
     /// </summary>
     [DataContract]
-    public class MerchantBase
+    public class PayeeBase
     {
         /// <summary>
 	    /// Required default constructor
 		/// </summary>
-        public MerchantBase() {}
+        public PayeeBase() {}
 
         /// <summary>
-        /// The public identifier for app created by the merchant/payee. Introduced to support use cases (for e.g. BrainTree integration with PayPal) where payee email_address or merchant_id is not available.
+        /// The public ID for the payee- or merchant-created app. Introduced to support use cases, such as BrainTree integration with PayPal, where payee `email_address` or `merchant_id` is not available.
         /// </summary>
         [DataMember(Name="client_id", EmitDefaultValue = false)]
         public string ClientId;
@@ -31,7 +31,7 @@ namespace PayPalCheckoutSdk.Orders
         /// The internationalized email address.<blockquote><strong>Note:</strong> Up to 64 characters are allowed before and 255 characters are allowed after the <code>@</code> sign. However, the generally accepted maximum length for an email address is 254 characters. The pattern verifies that an unquoted <code>@</code> sign exists.</blockquote>
         /// </summary>
         [DataMember(Name="email_address", EmitDefaultValue = false)]
-        public string EmailAddress;
+        public string Email;
 
         /// <summary>
         /// The PayPal payer ID, which is a masked version of the PayPal account number intended for use with third parties. The account number is reversibly encrypted and a proprietary variant of Base32 is used to encode the result.

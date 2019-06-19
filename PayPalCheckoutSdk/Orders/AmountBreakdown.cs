@@ -1,8 +1,8 @@
-// This class was generated on Tue, 04 Sep 2018 12:18:45 PDT by version 0.1.0-dev+904328-dirty of Braintree SDK Generator
+// This class was generated on Tue, 21 May 2019 11:25:19 PDT by version 0.1.0-dev+8fcb5f of Braintree SDK Generator
 // AmountBreakdown.cs
-// @version 0.1.0-dev+904328-dirty
+// @version 0.1.0-dev+8fcb5f
 // @type object
-// @data H4sIAAAAAAAC/+yYT2vbTBDG7++nGHR6C0qU/oGCb2lCoS1NQhsKJQ3JeHdkLVntqrOjJKLkuxdJliPZLiWQU72nZJ/dmZ15PPph+Vdy3lSUzJLD0tdO4B0T3mh/55I0+YZscG7pBMv2RJImn6h5XBxTUGwqMd4ls+S8IJgPweBzkIIAu6T7j1mhYn9rNAXQJGhsgFCrAjCAeEELRqhcRqVLSfB+pYTCVJVxixQKdNp2/y1MLnDHWKVgXKgZnaIU0GnQJqg2LqRgckDX7CdpcsiMTd/zQZp8IdSnzjbJLEcbqBV+1oZJr4Qz9hWxGArJ7GLl1mfvqNm0aKhqYtVI3LRM1czkVNMV3LcJuWdAyI1Dp0zrAKMLqNqodOUXwhxt2yt4hgqbkpyArun5egzCfdVrTQ4lXymvadLp+s5muxdSMNGeKpBRCTF8+Hq69+bVy7ePRrSxl/9n2quQGSe0YGwTZNowKcmYgmTD4b32cMhegBQoYDQ5Mbmh0A3fcOhJjgjXa4a42tqH9K+u3KKtp24MyqYL3U4Kd4VRBZRmUQjMafajPjh4rWrb/aV+ZU2/OnTQeUHcTceytbZTa24Irj+efb/uTUAmcF5AmsootLaBnPvZQbvfJ82GrGt3gCZlSrSriO13nZ8cj+4K9Vyb9pHWbYUepPB1QKelCNuvy4YO33vuPidemg+uLufELTuGQiqLisLygZhMSAqBCC6OBu2oHYSnjs1zTMblaDb+QIUVlibjMVYjFyIXIhd2jgtC5VX3JWcKhrEcyRDJEMmwa2QY3nMm0zESIxUiFSIVdpUKV8MPG1vxMN6NnIiciJzYNU4I3m95rRirkQuRC5EL/xgXLh/++w0AAP//
+// @data H4sIAAAAAAAC/+yYXWvbTBCF799fMejqLShR+gEF36UJhbY0CW0olDQ4492xNWS1q86ukoiS/14kWaoUO5RAruq9snV29mOOjx4s/UrO65KSWYKFq2yYL4TwWrtbm6TJNxTGhaETLB6p+ET1ejBJk2PySrgM7GwyS85zgqEU3BJCTtAtsQ/vhoFS3A1r8qApIBsPvlI5oIfgAhrgQMV6VrqWAt4Nis+5LNmuUsjRatN+Y+srQasoBbQaNHvVFPsUeAlo6/0kTQ5FsO4aP0iTL4T61Jo6mS3ReGqEnxUL6UE4E1eSBCafzC4Gyz47S/WmT/2OE39G4qZPqhIhq+r2wF1vsHQCCEu2aBU3bQtaj6qZlQ4mISzQNL2CEyixLsgG0BU9X48+CNvVZpP9kefKaZp0+nBks92LkAvRnspRUAUS+PD1dO/Nq5dv/xjRzL38P9NO+YxtoJVgs0CmWUiFTMiHrC/ea4p99gJCjgFYkw28ZPJt4vqiJzkSpHpgiK2MuU//6soNmmrqRq9sutCOpHCbs8qh4FUeYEGzH9XBwWtVmfaTuivD3dWhhdYLkjYd69aaTg1fE1x9PPt+1ZmAQmBdgFCXrNCYGpbSZQfNfrdo1q/6YA/QpLhAM8zYvtf5yfFoL18tNDf3sW5O6CDkrvJodcj99u2yvsP3TtrfSdbmg62KBUkDjP4gpUFFfn1DTBKSgieCi6NeO2qC8NTYPEcyLkfZeIQKPaAm6RiJkQqRCpEKu0aF4c/KJB5jNXIhciFyYee4EKiYt887UzCM5UiGSIZIhl0jQ//KY5KOkRipEKkQqbCrVJhvffm4bTRyInIicmLXOBHwbstjxViNXIhciFz4x7hwef/fbwAAAP//
 // DO NOT EDIT
 using System.Runtime.Serialization;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using System.Collections.Generic;
 namespace PayPalCheckoutSdk.Orders
 {
     /// <summary>
-    /// The breakdown of the amount. Breakdown provides details such as total item amount, total tax amount, shipping, handling, gift wrap, insurance, and discounts, if any.
+    /// The breakdown of the amount. Breakdown provides details such as total item amount, total tax amount, shipping, handling, insurance, and discounts, if any.
     /// </summary>
     [DataContract]
     public class AmountBreakdown
@@ -20,6 +20,12 @@ namespace PayPalCheckoutSdk.Orders
 	    /// Required default constructor
 		/// </summary>
         public AmountBreakdown() {}
+
+        /// <summary>
+        /// The currency and amount for a financial transaction, such as a balance or payment due.
+        /// </summary>
+        [DataMember(Name="discount", EmitDefaultValue = false)]
+        public Money Discount;
 
         /// <summary>
         /// The currency and amount for a financial transaction, such as a balance or payment due.

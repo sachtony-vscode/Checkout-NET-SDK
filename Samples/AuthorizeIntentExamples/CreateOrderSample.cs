@@ -19,7 +19,7 @@ namespace Samples.AuthorizeIntentExamples
         {
             OrderRequest orderRequest = new OrderRequest()
             {
-                Intent = "AUTHORIZE",
+                CheckoutPaymentIntent = "AUTHORIZE",
 
                 ApplicationContext = new ApplicationContext
                 {
@@ -37,11 +37,11 @@ namespace Samples.AuthorizeIntentExamples
                         Description = "Sporting Goods",
                         CustomId = "CUST-HighFashions",
                         SoftDescriptor = "HighFashions",
-                        Amount = new AmountWithBreakdown
+                        AmountWithBreakdown = new AmountWithBreakdown
                         {
                             CurrencyCode = "USD",
                             Value = "220.00",
-                            Breakdown = new AmountBreakdown
+                            AmountBreakdown = new AmountBreakdown
                             {
                                 ItemTotal = new Money
                                 {
@@ -109,7 +109,7 @@ namespace Samples.AuthorizeIntentExamples
                                 Category = "PHYSICAL_GOODS"
                             }
                         },
-                        Shipping = new ShippingDetails
+                        ShippingDetail = new ShippingDetail
                         {
                             Name = new Name
                             {
@@ -145,13 +145,13 @@ namespace Samples.AuthorizeIntentExamples
             {
                 Console.WriteLine("Status: {0}", result.Status);
                 Console.WriteLine("Order Id: {0}", result.Id);
-                Console.WriteLine("Intent: {0}", result.Intent);
+                Console.WriteLine("Intent: {0}", result.CheckoutPaymentIntent);
                 Console.WriteLine("Links:");
                 foreach(LinkDescription link in result.Links)
                 {
                     Console.WriteLine("\t{0}: {1}\tCall Type: {2}", link.Rel, link.Href, link.Method);
                 }
-                AmountWithBreakdown amount = result.PurchaseUnits[0].Amount;
+                AmountWithBreakdown amount = result.PurchaseUnits[0].AmountWithBreakdown;
                 Console.WriteLine("Total Amount: {0} {1}", amount.CurrencyCode, amount.Value);
                 Console.WriteLine("Response JSON: \n {0}", PayPalClient.ObjectToJSONString(result));
             }
@@ -163,7 +163,7 @@ namespace Samples.AuthorizeIntentExamples
         {
             OrderRequest orderRequest = new OrderRequest()
             {
-                Intent = "AUTHORIZE",
+                CheckoutPaymentIntent = "AUTHORIZE",
                 ApplicationContext = new ApplicationContext
                 {
                     CancelUrl = "https://www.example.com",
@@ -172,7 +172,7 @@ namespace Samples.AuthorizeIntentExamples
                 PurchaseUnits = new List<PurchaseUnitRequest>
                 {
                     new PurchaseUnitRequest{
-                        Amount = new AmountWithBreakdown
+                        AmountWithBreakdown = new AmountWithBreakdown
                         {
                             CurrencyCode = "USD",
                             Value = "220.00"
@@ -199,13 +199,13 @@ namespace Samples.AuthorizeIntentExamples
                 var result = response.Result<Order>();
                 Console.WriteLine("Status: {0}", result.Status);
                 Console.WriteLine("Order Id: {0}", result.Id);
-                Console.WriteLine("Intent: {0}", result.Intent);
+                Console.WriteLine("Intent: {0}", result.CheckoutPaymentIntent);
                 Console.WriteLine("Links:");
                 foreach(LinkDescription link in result.Links)
                 {
                     Console.WriteLine("\t{0}: {1}\tCall Type: {2}", link.Rel, link.Href, link.Method);
                 }
-                AmountWithBreakdown amount = result.PurchaseUnits[0].Amount;
+                AmountWithBreakdown amount = result.PurchaseUnits[0].AmountWithBreakdown;
                 Console.WriteLine("Total Amount: {0} {1}", amount.CurrencyCode, amount.Value);
             }
 

@@ -1,0 +1,31 @@
+// This class was generated on Tue, 21 May 2019 11:25:19 PDT by version 0.1.0-dev+8fcb5f of Braintree SDK Generator
+// Data.cs
+// @version 0.1.0-dev+8fcb5f
+// @type object
+// @data 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
+// DO NOT EDIT
+using System.Runtime.Serialization;
+using System.Collections.Generic;
+
+
+namespace PayPalCheckoutSdk.Orders
+{
+    /// <summary>
+    /// The industry-specific data. For example, if `industry_type` is `AIRLINE`, the `airline_itineraries` array must be populated and all other properties, if any, are ignored.
+    /// </summary>
+    [DataContract]
+    public class Data
+    {
+        /// <summary>
+	    /// Required default constructor
+		/// </summary>
+        public Data() {}
+
+        /// <summary>
+        /// An array of airline itineraries' data, including ticket, passenger, and airline details.
+        /// </summary>
+        [DataMember(Name="airline_itineraries", EmitDefaultValue = false)]
+        public List<AirlineItinerary> AirlineItineraries;
+    }
+}
+

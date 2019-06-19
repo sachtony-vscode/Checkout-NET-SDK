@@ -34,8 +34,8 @@ namespace PayPalCheckoutSdk.Orders.Test
                 PurchaseUnit retrievedOrderPurchaseUnit = retrievedOrder.PurchaseUnits[count];
                 PurchaseUnit createdOrderPurchaseUnit = createdOrder.PurchaseUnits[count];
                 Assert.Equal(retrievedOrderPurchaseUnit.ReferenceId, createdOrderPurchaseUnit.ReferenceId);
-                Assert.Equal(retrievedOrderPurchaseUnit.Amount.CurrencyCode, createdOrderPurchaseUnit.Amount.CurrencyCode);
-                Assert.Equal(retrievedOrderPurchaseUnit.Amount.Value, createdOrderPurchaseUnit.Amount.Value);
+                Assert.Equal(retrievedOrderPurchaseUnit.AmountWithBreakdown.CurrencyCode, createdOrderPurchaseUnit.AmountWithBreakdown.CurrencyCode);
+                Assert.Equal(retrievedOrderPurchaseUnit.AmountWithBreakdown.Value, createdOrderPurchaseUnit.AmountWithBreakdown.Value);
             }
 
             Assert.NotNull(retrievedOrder.CreateTime);

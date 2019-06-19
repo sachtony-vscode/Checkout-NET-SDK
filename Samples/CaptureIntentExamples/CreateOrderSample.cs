@@ -20,7 +20,7 @@ namespace Samples.CaptureIntentExamples
         {
             OrderRequest orderRequest = new OrderRequest()
             {
-                Intent = "CAPTURE",
+                CheckoutPaymentIntent = "CAPTURE",
 
                 ApplicationContext = new ApplicationContext
                 {
@@ -38,11 +38,11 @@ namespace Samples.CaptureIntentExamples
                         Description = "Sporting Goods",
                         CustomId = "CUST-HighFashions",
                         SoftDescriptor = "HighFashions",
-                        Amount = new AmountWithBreakdown
+                        AmountWithBreakdown = new AmountWithBreakdown
                         {
                             CurrencyCode = "USD",
                             Value = "220.00",
-                            Breakdown = new AmountBreakdown
+                            AmountBreakdown = new AmountBreakdown
                             {
                                 ItemTotal = new Money
                                 {
@@ -110,7 +110,7 @@ namespace Samples.CaptureIntentExamples
                                 Category = "PHYSICAL_GOODS"
                             }
                         },
-                        Shipping = new ShippingDetails
+                        ShippingDetail = new ShippingDetail
                         {
                             Name = new Name
                             {
@@ -152,13 +152,13 @@ namespace Samples.CaptureIntentExamples
                 var result = response.Result<Order>();
                 Console.WriteLine("Status: {0}", result.Status);
                 Console.WriteLine("Order Id: {0}", result.Id);
-                Console.WriteLine("Intent: {0}", result.Intent);
+                Console.WriteLine("Intent: {0}", result.CheckoutPaymentIntent);
                 Console.WriteLine("Links:");
                 foreach (LinkDescription link in result.Links)
                 {
                     Console.WriteLine("\t{0}: {1}\tCall Type: {2}", link.Rel, link.Href, link.Method);
                 }
-                AmountWithBreakdown amount = result.PurchaseUnits[0].Amount;
+                AmountWithBreakdown amount = result.PurchaseUnits[0].AmountWithBreakdown;
                 Console.WriteLine("Total Amount: {0} {1}", amount.CurrencyCode, amount.Value);
                 Console.WriteLine("Response JSON: \n {0}", PayPalClient.ObjectToJSONString(result));
             }
@@ -169,9 +169,9 @@ namespace Samples.CaptureIntentExamples
              This is the driver function which invokes the createOrder function to create
              an sample order.
         */
-        // static void Main(string[] args)
-        // {
-        //     CreateOrder(true).Wait();
-        // }
+//         static void Main(string[] args)
+//         {
+//             CreateOrder(true).Wait();
+//         }
     }
 }
