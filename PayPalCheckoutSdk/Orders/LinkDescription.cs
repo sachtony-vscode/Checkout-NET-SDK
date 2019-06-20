@@ -1,8 +1,8 @@
-// This class was generated on Tue, 04 Sep 2018 12:18:45 PDT by version 0.1.0-dev+904328-dirty of Braintree SDK Generator
+// This class was generated on Tue, 21 May 2019 11:25:19 PDT by version 0.1.0-dev+8fcb5f of Braintree SDK Generator
 // LinkDescription.cs
-// @version 0.1.0-dev+904328-dirty
+// @version 0.1.0-dev+8fcb5f
 // @type object
-// @data H4sIAAAAAAAC/+xXQW/bRhO9f79iwHxALYCSjCBxU93cxkGMxnUgK70YBjQiR+LWy1lmd2iZKPrfiyUpSxStOE0k58KDDpxdiu/NvJ2d93cwKTIKRsEHxbfwllxkVSbKcBAGf6JVONP0B6Z+RxAGv1OxftjcPAomCYGlzzk56VvSKBTD9fvTydnl6RVoxbc3R8PYRG6ImRqaO7J3ipbDFwkKGXR9v8P1QPHc2BT9fw6CMDi1FosK4HEYjAnjS9ZFMJqjduQDn3NlKX4IfLQmIyuKXDC6fqDmxCpetAkRR+WOTV7rWJteSrFCkCIjUAzLREUJiAGXz1IlIOsEQIyC34ufc63/CZ8kkViaNxjUgTb8yKSZJiEQtAsS+DT+MICJgRRvqUZflS1CrUO/faa4WklJEhPDUkkCkigH15/G5zChNPNv9KuaCcU3R4lI5kbDoRij3UCRzAfGLoaJpHpo59HJ65+Pe6UcBvDOWMgs9TNrInJO8SIExZHO4+qj0/9PQ5geTUNAjmHam0KUoMVIyLoBeEZTz3UKypX7b6mAleA8V8PEviwo5Qcd4EMKKo4VH/QFdL5wLGX4PxVObP5tdSvF1JLfZvRLAgwBHcQ0V0wxzAq4Hr/7DV4evzpZV2C5XK7zb+eR//kdA7mX3qA+6jOqcucTVOvimXRbSWqLfB1qM38/mXxcqdDWX/dn71HtPhMDS7oBv3puY78uk1sCVIbL8j15Tl7/8ubNC0eRf6P/qhfW3caRvSPna48M529hbixgXTyv85wxnalFbnKnC4gbJXaUIouKHJj5Q80HcEUE12XzH9cI3ZaGkLHEhs6pBafE4ob+3f6K0vbj4N7T6O33HJUQr6KEUmyXwq3i62o8hHZeU2WXBmP3Kf71pWNmf1EkbagYx8pjQX0ulLoG5vZaE/x+dX2qNVzOwX/qEZhaXzbvlVWkCemUAT0kLyqXz/pV2uv+XCY4zZ3AHWoVoxDgAhU7Ad9+N/c3qZ18LzUuvkCNi21qdWQ/1AyTV1VqLB2Q4i59lZdCqaKmtprxQ+pqN7KMOCaO/EtNaI2FQ2Lb1cvnFhe+s43JGZ3X8+8a4aPLPyKHqtUz1KOd4pTBL+z5JvQ9uI2pHK4amFaR3eep3LHnE3Hhp6Mdg1Z7yHpqwvczZ2RY6F76xJGJFS+gPMp0eGcyU4y2OKs/2wDfWnps0GchbsOu7vqLXIvKcpsZR3DOQpZJ4AKVhrN7IXa+RcDRxfnFWQ8+ohW4ZBr5aT1F8bVbv0PO4YLgVxMrck/ONC+PX73uPdNsJtuDtTw9U39zfiZLM4JSfeBhfVUmTvaTiZuv6BlspJGK6vmQ3euSaff1a5i2rt9VZH/X73r/nnvMLr1lKMmVoG1mejO6pTwDmGW6qNx0BdX7GT+XexbIEbmf4NP43IXg/F+US/55w4Xfoc5p8Dw3T+YNvuWNN7eYtlZ/xP2Y7YB3WFw3X+tTKpNx1XYrWwudZ+k8S+dZOs/SeZbOs3SepfMsnWfpPEvnWTrPciDPsrMjKdFbLamOtHtSZUj88p6axP/+BQAA//8=
+// @data H4sIAAAAAAAC/+xX32/bNhB+319xUAcsBvwjKNqs81u2pmiwZgkcdy9BYZ+lk8WFIlXy1MQY9r8PpOQosqImaxUDA/TgB96R1vfdHY/3/R3MNxkF0+CDUNfwlmxoRMZCq2AY/IlG4ErSH5i6HcEw+J021eL+5mkwTwgMfc7J8siQRKYIrt4fz0/Ojy9BCnX96WAS6dBOMBMTQzEZUiG51ciQzbSyZCcvEmTSaEfugB2AULE2KbpPjINhcGwMbgq8h8NgRhidK7kJpjFKS87wOReGojvDhdEZGRZkg+nVHVPLRqh1kx+pcMFuy32epMJ5YWvSTSkSCO4ICAU3iQgTYA02X6WCgauAQISM30tA5VL+M3yURWIorjEoDU34oU4zSUzAaNbE8HH2YQxzDSleU4m+SGOIUg7d9pVQhSclTnQEN4IT4ERYuPo4O4U5pZk7MSqSxhR9OkiYMzudTFhraceCOB5rs54knMqJicOj1z8fDnx5jOGdNpAZGmVGh2StUOshCBXKPCo+uvxxOYTlwXIIqCJYDpYQJmgwZDJ2DI7R0nFdgrB+/zVtYFuAjqtWpFxakP0HLeBdCAqOBR90CbQucYq9+T8ljk3+bXnzxdSsP29+QgUOAS1EFAtFEaw2cDV79xu8PHx1VKXg5uamSoCJQ/dzO8Z8y4NxefdXVATPRagsjD0VblFTO+RLU5P5+/n8YluGpvy6u3wPFu+eGBiSNfjFuon9ygfXAxRa+fQ9elFe//LmzQtLoTsxejUYlu3GkvlC1uUeFZy+hVgbwDJ5rtBzhelKrHOdW7mBqJZiSykqFqEFHd/lfAyXRHDlX4NZidDu1BAq9NjQWrFWKSm2E3d2tKW0uxzfOhqDbi+Sh3gZJpRiMxV2a6+ycWdqfbd8mwZtuiz+6tnRq78o5CZUjCLhsKBcCKbU1kBXztPSV0d/rDZQ7QH/Bx1XO0q50LHH9gB476xDlvI8fgAooMPkas3mq1GRjbJv+7inuWX4glJEyAS4RqEsg2vL9/fXuR19Lze1+Qo376xzU5sOuWlFrtpSbegZObbVnX8sfOHUS65urzPttrLakWWkIlKhO1SHVnM8J7a2Hh8bXLuOtzBktczLSbmCuPXP7rubHWe7Daq/Ge8nuM0eI1o6i+8mHaNynbWJyY9jNUxbS/tF8zs6vipnbpxqGc2aU9ljmsBNqaFWTLc8IhXqSKg1+DtOzy9mVkKh2Sy2362hL3wnleshbaCYVBN3MR2c5ZJFlptMW4JTxWQUMZyhkHByy6Ssax5wcHZ6djKACzQM54qmbsBPkV3yqjNkLa4JftWRIPvoFPTy8NXrwZ6mucYozo9P4d8cn/mNnoIvP3CwnhSJo24i8ekJTUNproWiWD/r26Co/WUunDVEWlHHL3O1v+Mu01ZwGXKysIymHmtnviytO7WnAbNMbgoJXmB1GsjN8o4GqpDsT/BxdmqH4P/Yu9z6nnT/gjKnPT0+GbK7DIusOrpD1bkv7nub163cBdWf7At9C+p2uF3fz69qnkKwXDaVz46j1z+9/un1T69/ev3T659e//T6p9c/vf7p9U+vf/4H+qe1VwmWO82qtDTDV4gb5+6offzwLwAAAP//
 // DO NOT EDIT
 using System.Runtime.Serialization;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using System.Collections.Generic;
 namespace PayPalCheckoutSdk.Orders
 {
     /// <summary>
-    /// The request-related [HATEOAS link](/docs/api/overview/#hateoas-links) information.
+    /// The request-related [HATEOAS link](/docs/api/reference/api-responses/#hateoas-links) information.
     /// </summary>
     [DataContract]
     public class LinkDescription
@@ -52,18 +52,6 @@ namespace PayPalCheckoutSdk.Orders
         /// </summary>
         [DataMember(Name="rel", EmitDefaultValue = false)]
         public string Rel;
-
-        // /// <summary>
-        // /// The request data or link target.
-        // /// </summary>
-        // [DataMember(Name="schema", EmitDefaultValue = false)]
-        // public LinkSchema<T> Schema;
-
-        // /// <summary>
-        // /// The request data or link target.
-        // /// </summary>
-        // [DataMember(Name="targetSchema", EmitDefaultValue = false)]
-        // public LinkSchema<T> TargetSchema;
 
         /// <summary>
         /// The link title.

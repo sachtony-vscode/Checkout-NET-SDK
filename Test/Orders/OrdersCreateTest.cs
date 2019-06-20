@@ -19,13 +19,13 @@ namespace PayPalCheckoutSdk.Orders.Test
         private static OrderRequest buildRequestBody()
         {
             var order = new OrderRequest() {
-                Intent = "CAPTURE",
+                CheckoutPaymentIntent = "CAPTURE",
                 PurchaseUnits = new List<PurchaseUnitRequest>()
                 {
                     new PurchaseUnitRequest()
                     {
                         ReferenceId = "test_ref_id1",
-                        Amount = new AmountWithBreakdown()
+                        AmountWithBreakdown = new AmountWithBreakdown()
                         {
                             CurrencyCode = "USD",
                             Value = "100.00"
@@ -63,8 +63,8 @@ namespace PayPalCheckoutSdk.Orders.Test
 
             PurchaseUnit firstPurchaseUnit = createdOrder.PurchaseUnits[0];
             Assert.Equal("test_ref_id1", firstPurchaseUnit.ReferenceId);
-            Assert.Equal("USD", firstPurchaseUnit.Amount.CurrencyCode);
-            Assert.Equal("100.00", firstPurchaseUnit.Amount.Value);
+            Assert.Equal("USD", firstPurchaseUnit.AmountWithBreakdown.CurrencyCode);
+            Assert.Equal("100.00", firstPurchaseUnit.AmountWithBreakdown.Value);
 
             Assert.NotNull(createdOrder.CreateTime);
 

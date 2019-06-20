@@ -21,9 +21,10 @@ BraintreeHttp-Dotnet 0.3.0
 
 ### Binaries
 
-It is not mandatory to fork this repository for using the PayPal SDK. You can refer [PayPal Checkout Server SDK](https://developer.paypal.com/docs/checkout/reference/server-integration) for configuring and working with SDK without forking this code.
+It is not necessary to fork this repository for using the PayPal SDK. Please take a look at [PayPal Checkout Server SDK](https://developer.paypal.com/docs/checkout/reference/server-integration) for configuring and working with SDK without forking this code.
 
-For contirbuting or referrring the samples, You can fork/refer this repository. 
+For contributing to this repository or using the samples you can fork this repository.
+
 ### Setting up credentials
 Get client ID and client secret by going to https://developer.paypal.com/developer/applications and generating a REST API app. Get <b>Client ID</b> and <b>Secret</b> from there.
 
@@ -109,7 +110,7 @@ Before capturing an order, order should be approved by the buyer using the appro
     {
             // Construct a request object and set desired parameters
             // Replace ORDER-ID with the approved order id from create order
-            var request = new OrdersCaptureRequest("69E54436G09638353");
+            var request = new OrdersCaptureRequest("APPROVED-ORDER-ID");
             request.RequestBody(new OrderActionRequest());
             HttpResponse response = await client().Execute(request);
             var statusCode = response.StatusCode;
@@ -135,7 +136,7 @@ You can start off by trying out [creating and capturing an order](/Samples/Captu
 
 To try out different samples for both create and authorize intent head to [this link](/Samples).
 
-Note: Update the `PayPalClient.cs` with your sandbox client credentials or pass your client credentials as environment variable whie executing the samples.
+Note: Update the `PayPalClient.cs` with your sandbox client credentials or pass your client credentials as environment variable while executing the samples.
 
 
 ## License

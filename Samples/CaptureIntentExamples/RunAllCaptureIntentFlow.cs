@@ -15,13 +15,13 @@ public class RunAll
         var createOrderResult = createOrderResponse.Result<Order>();
                 Console.WriteLine("Status: {0}", createOrderResult.Status);
                 Console.WriteLine("Order Id: {0}", createOrderResult.Id);
-                Console.WriteLine("Intent: {0}", createOrderResult.Intent);
+                Console.WriteLine("Intent: {0}", createOrderResult.CheckoutPaymentIntent);
                 Console.WriteLine("Links:");
                 foreach (PayPalCheckoutSdk.Orders.LinkDescription link in createOrderResult.Links)
                 {
                     Console.WriteLine("\t{0}: {1}\tCall Type: {2}", link.Rel, link.Href, link.Method);
                 }
-                AmountWithBreakdown amount = createOrderResult.PurchaseUnits[0].Amount;
+                AmountWithBreakdown amount = createOrderResult.PurchaseUnits[0].AmountWithBreakdown;
                 Console.WriteLine("Total Amount: {0} {1}", amount.CurrencyCode, amount.Value);
         
         Console.WriteLine("Copy approve link and paste it in browser. Login with buyer account and follow the instructions.\nOnce approved hit enter...\n");
@@ -33,7 +33,7 @@ public class RunAll
         var captureId= "";
                 Console.WriteLine("Status: {0}", captureOrderResult.Status);
                 Console.WriteLine("Order Id: {0}", captureOrderResult.Id);
-                Console.WriteLine("Intent: {0}", captureOrderResult.Intent);
+                Console.WriteLine("Intent: {0}", captureOrderResult.CheckoutPaymentIntent);
                 Console.WriteLine("Links:");
                 foreach (PayPalCheckoutSdk.Orders.LinkDescription link in captureOrderResult.Links)
                 {
@@ -46,11 +46,10 @@ public class RunAll
                         captureId = capture.Id;
                     }
                 }
-                AmountWithBreakdown captureAmount = captureOrderResult.PurchaseUnits[0].Amount;
+                AmountWithBreakdown captureAmount = captureOrderResult.PurchaseUnits[0].AmountWithBreakdown;
                 Console.WriteLine("Buyer:");
-                Console.WriteLine("\tEmail Address: {0}\n\tName: {1}\n\tPhone Number: {2}{3}", 
-                captureOrderResult.Payer.EmailAddress, captureOrderResult.Payer.Name.FullName, 
-                captureOrderResult.Payer.Phone.CountryCode, captureOrderResult.Payer.Phone.NationalNumber);
+                Console.WriteLine("\tEmail Address: {0}\n\tName: {1} {2}", 
+                captureOrderResult.Payer.Email, captureOrderResult.Payer.Name.GivenName, captureOrderResult.Payer.Name.Surname);
         
         Console.WriteLine("Refunding the Order....");
         var refundOrderResponse = CapturesRefundSample.CapturesRefund(captureId, true).Result;

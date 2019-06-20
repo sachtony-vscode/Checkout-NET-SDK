@@ -1,8 +1,8 @@
-// This class was generated on Tue, 04 Sep 2018 12:18:45 PDT by version 0.1.0-dev+904328-dirty of Braintree SDK Generator
+// This class was generated on Tue, 21 May 2019 11:25:19 PDT by version 0.1.0-dev+8fcb5f of Braintree SDK Generator
 // PaymentMethod.cs
-// @version 0.1.0-dev+904328-dirty
+// @version 0.1.0-dev+8fcb5f
 // @type object
-// @data H4sIAAAAAAAC/6yRT0szQQzG7++nGHLevnjem+BN1CLFi0iJs0/dgflnJnsYpN9d1tqxsgoeekyekPx+5I02NYN6WnMNiGpuoGMaqKMHFsfPHrcc5pw6ukb9Kq5QrLisLkXqaTPC2KloChDDcTABYkeOavLn3izYQRAtyn/q6FKE6+H0RUf34OEu+kr9jn3B3HidnGBojbWkDFGHQv1jgy4qLr4sYTNXYHs4OW85ZV9mS5Uj/aqNNY+SJjmDQ5y833d/EpFtgYfVHzy+Rb9/ZHWcahbh48smRaMnuqY4xVnMnvb/3gEAAP//
+// @data H4sIAAAAAAAC/6zRT0sDMRAF8LufIsw5Fc97E7wJKlK8iCwx++oG8s/J7CFIv7uUbUOlK/Sw17xh8n7MD21rBnWUTQ2I0gfImAbS9GbYmU+PJxMW80fUY0SaHlAsuywuRepoO0LZqUgKYGXioALYjiaKOm5RmbEDI1qUW9J0z2zqXORO0yvM8Bx9pW5nfMHh4XtyjKE9vHDKYHEo1L03QhF28WuxOtDPXx62nHe/zC4pp/abNtYcJU28giFO3u/1VRDuCzysLDj+RP9fZHOaaor5pipFJWdcVZxgFdnH/uYXAAD//w==
 // DO NOT EDIT
 using System.Runtime.Serialization;
 using System.Collections.Generic;
@@ -22,7 +22,7 @@ namespace PayPalCheckoutSdk.Orders
         public PaymentMethod() {}
 
         /// <summary>
-        /// The merchant-preferred payment PayPalCheckoutSdks.
+        /// The merchant-preferred payment sources.
         /// </summary>
         [DataMember(Name="payee_preferred", EmitDefaultValue = false)]
         public string PayeePreferred;
