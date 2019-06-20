@@ -36,7 +36,7 @@ namespace Samples.AuthorizeIntentExamples
 
         // static void Main(string[] args)
         // {
-        //     string OrderId = "1B753033X77480819";
+        //     string OrderId = "<<REPLACE-WITH-APPROVED-ORDER-ID>>";
         //     CaptureOrder(OrderId, true).Wait();
         // }
     }

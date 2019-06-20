@@ -28,12 +28,6 @@ namespace PayPalCheckoutSdk.Orders
         public Money ConvertedAmount;
 
         /// <summary>
-        /// The exchange rate that determines the amount to convert from one currency to another currency.
-        /// </summary>
-        [DataMember(Name="exchange_rate", EmitDefaultValue = false)]
-        public ExchangeRate ExchangeRate;
-
-        /// <summary>
         /// The currency and amount for a financial transaction, such as a balance or payment due.
         /// </summary>
         [DataMember(Name="payable_amount", EmitDefaultValue = false)]

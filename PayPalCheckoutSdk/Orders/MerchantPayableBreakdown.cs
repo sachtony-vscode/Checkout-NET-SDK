@@ -46,12 +46,6 @@ namespace PayPalCheckoutSdk.Orders
         public Money PaypalFee;
 
         /// <summary>
-        /// An array of platform or partner fees, commissions, or brokerage fees for the refund.
-        /// </summary>
-        [DataMember(Name="platform_fees", EmitDefaultValue = false)]
-        public List<PlatformFee> PlatformFees;
-
-        /// <summary>
         /// The currency and amount for a financial transaction, such as a balance or payment due.
         /// </summary>
         [DataMember(Name="total_refunded_amount", EmitDefaultValue = false)]

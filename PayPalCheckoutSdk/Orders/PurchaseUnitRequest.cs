@@ -80,12 +80,6 @@ namespace PayPalCheckoutSdk.Orders
         /// </summary>
         [DataMember(Name="soft_descriptor", EmitDefaultValue = false)]
         public string SoftDescriptor;
-
-        /// <summary>
-        /// The supplementary data.
-        /// </summary>
-        [DataMember(Name="supplementary_data", EmitDefaultValue = false)]
-        public SupplementaryData SupplementaryData;
     }
 }
 

@@ -16,7 +16,7 @@ namespace Samples.AuthorizeIntentExamples
         {
             var request = new OrdersAuthorizeRequest(OrderId);
             request.Prefer("return=representation");
-            request.RequestBody(new OrderActionRequest());
+            request.RequestBody(new AuthorizeRequest());
             var response = await PayPalClient.client().Execute(request);
 
             if (debug)
@@ -42,7 +42,7 @@ namespace Samples.AuthorizeIntentExamples
 
         //static void Main(string[] args)
         //{
-        //    string OrderId = "8D641494172581340";
+        //    string OrderId = "<<REPLACE-WITH-APPROVED-ORDER-ID>>";
         //    AuthorizeOrder(OrderId, true).Wait();
         //}
     }

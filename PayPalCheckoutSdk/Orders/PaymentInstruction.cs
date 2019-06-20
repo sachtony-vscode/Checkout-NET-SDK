@@ -26,12 +26,6 @@ namespace PayPalCheckoutSdk.Orders
         /// </summary>
         [DataMember(Name="disbursement_mode", EmitDefaultValue = false)]
         public string DisbursementMode;
-
-        /// <summary>
-        /// An array of various fees, commissions, tips, or donations.
-        /// </summary>
-        [DataMember(Name="platform_fees", EmitDefaultValue = false)]
-        public List<PlatformFee> PlatformFees;
     }
 }
 

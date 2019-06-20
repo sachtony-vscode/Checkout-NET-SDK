@@ -22,12 +22,6 @@ namespace PayPalCheckoutSdk.Orders
         public MerchantReceivableBreakdown() {}
 
         /// <summary>
-        /// The exchange rate that determines the amount to convert from one currency to another currency.
-        /// </summary>
-        [DataMember(Name="exchange_rate", EmitDefaultValue = false)]
-        public ExchangeRate ExchangeRate;
-
-        /// <summary>
         /// The currency and amount for a financial transaction, such as a balance or payment due.
         /// </summary>
         [DataMember(Name="gross_amount", EmitDefaultValue = false)]
@@ -44,12 +38,6 @@ namespace PayPalCheckoutSdk.Orders
         /// </summary>
         [DataMember(Name="paypal_fee", EmitDefaultValue = false)]
         public Money PaypalFee;
-
-        /// <summary>
-        /// An array of platform or partner fees, commissions, or brokerage fees that associated with the captured payment.
-        /// </summary>
-        [DataMember(Name="platform_fees", EmitDefaultValue = false)]
-        public List<PlatformFee> PlatformFees;
 
         /// <summary>
         /// The currency and amount for a financial transaction, such as a balance or payment due.

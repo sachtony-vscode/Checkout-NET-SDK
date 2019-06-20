@@ -34,12 +34,6 @@ namespace PayPalCheckoutSdk.Orders
         public string CancelUrl;
 
         /// <summary>
-        /// Client configuration that captures the product flows and specific experiences that a user completes a paypal transaction.
-        /// </summary>
-        [DataMember(Name="client_configuration", EmitDefaultValue = false)]
-        public ClientConfiguration ClientConfiguration;
-
-        /// <summary>
         /// The type of landing page to show on the PayPal site for customer checkout.
         /// </summary>
         [DataMember(Name="landing_page", EmitDefaultValue = false)]

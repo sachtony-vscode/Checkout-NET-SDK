@@ -43,8 +43,11 @@ namespace Samples.CaptureIntentExamples
                 }
                 AmountWithBreakdown amount = result.PurchaseUnits[0].AmountWithBreakdown;
                 Console.WriteLine("Buyer:");
-                Console.WriteLine("\tEmail Address: {0}\n\tName: {1}\n\tPhone Number: {2}{3}", result.Payer.Email, result.Payer.Name.FullName, result.Payer.PhoneWithType.PhoneNumber.CountryCallingCode, result.Payer.PhoneWithType.PhoneNumber.NationalNumber);
-                Console.WriteLine("Response JSON: \n {0}", PayPalClient.ObjectToJSONString(result));
+                Console.WriteLine("\tEmail Address: {0}\n\tName: {1} {2}\n",
+                    result.Payer.Email, 
+                    result.Payer.Name.GivenName,
+                    result.Payer.Name.Surname);
+                Console.WriteLine("Response JSON:\n{0}", PayPalClient.ObjectToJSONString(result));
             }
 
             return response;
@@ -54,10 +57,10 @@ namespace Samples.CaptureIntentExamples
             Driver Function to invoke capture payment on order.
             Order Id should be replaced with the valid approved order id. 
         */
-        // static void Main(string[] args)
-        // {
-        //     string OrderId = "5JC45524FD4582424";
-        //     CaptureOrder(OrderId, true).Wait();
-        // }
+         //static void Main(string[] args)
+         //{
+         //    string OrderId = "<<REPLACE-WITH-APPROVED-ORDER-ID>>";
+         //    CaptureOrder(OrderId, true).Wait();
+         //}
     }
 }

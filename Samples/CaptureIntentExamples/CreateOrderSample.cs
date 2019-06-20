@@ -169,9 +169,9 @@ namespace Samples.CaptureIntentExamples
              This is the driver function which invokes the createOrder function to create
              an sample order.
         */
-//         static void Main(string[] args)
-//         {
-//             CreateOrder(true).Wait();
-//         }
+         //static void Main(string[] args)
+         //{
+         //    CreateOrder(true).Wait();
+         //}
     }
 }
