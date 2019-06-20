@@ -60,6 +60,7 @@ namespace PayPalCheckoutSdk.Core
                 //create a new client for acceess token.
                 HttpClient AccessTokenClient = new HttpClient(environment);
                 AccessTokenRequest request = new AccessTokenRequest(environment, refreshToken);
+                var executeTask = this.client.Execute(request);
                 //make fetch access token call sync to avoid deadlock.
                 Task<HttpResponse> executeTask = Task.Run<HttpResponse>(async () => await AccessTokenClient.Execute(request));
                 return executeTask.Result;
