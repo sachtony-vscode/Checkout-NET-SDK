@@ -46,9 +46,9 @@ namespace PayPalCheckoutSdk.Orders
         }
         
         
-        public OrdersAuthorizeRequest RequestBody(OrderActionRequest OrderActionRequest)
+        public OrdersAuthorizeRequest RequestBody(AuthorizeRequest authorizeRequest)
         {
-            this.Body = OrderActionRequest;
+            this.Body = authorizeRequest;
             return this;
         }
     }

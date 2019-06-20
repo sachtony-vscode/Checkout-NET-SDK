@@ -15,13 +15,13 @@ public class RunAllAuthorizeIntentFlow
         var createOrderResult = createOrderResponse.Result<Order>();
                 Console.WriteLine("Status: {0}", createOrderResult.Status);
                 Console.WriteLine("Order Id: {0}", createOrderResult.Id);
-                Console.WriteLine("Intent: {0}", createOrderResult.Intent);
+                Console.WriteLine("Intent: {0}", createOrderResult.CheckoutPaymentIntent);
                 Console.WriteLine("Links:");
                 foreach (PayPalCheckoutSdk.Orders.LinkDescription link in createOrderResult.Links)
                 {
                     Console.WriteLine("\t{0}: {1}\tCall Type: {2}", link.Rel, link.Href, link.Method);
                 }
-                AmountWithBreakdown amount = createOrderResult.PurchaseUnits[0].Amount;
+                AmountWithBreakdown amount = createOrderResult.PurchaseUnits[0].AmountWithBreakdown;
                 Console.WriteLine("Total Amount: {0} {1}", amount.CurrencyCode, amount.Value);
         
         Console.WriteLine("Copy approve link and paste it in browser. Login with buyer account and follow the instructions.\nOnce approved hit enter...\n");
@@ -34,15 +34,15 @@ public class RunAllAuthorizeIntentFlow
         var authorizationId = authorizeOrderResult.PurchaseUnits[0].Payments.Authorizations[0].Id;
                 Console.WriteLine("Order Id: {0}", authorizeOrderResult.Id);
                 Console.WriteLine("Authorization Id: {0}", authorizeOrderResult.PurchaseUnits[0].Payments.Authorizations[0].Id);
-                Console.WriteLine("Intent: {0}", authorizeOrderResult.Intent);
+                Console.WriteLine("Intent: {0}", authorizeOrderResult.CheckoutPaymentIntent);
                 Console.WriteLine("Links:");
                 foreach (PayPalCheckoutSdk.Orders.LinkDescription link in authorizeOrderResult.Links)
                 {
                     Console.WriteLine("\t{0}: {1}\tCall Type: {2}", link.Rel, link.Href, link.Method);
                 }
-                AmountWithBreakdown authorixedAmount = authorizeOrderResult.PurchaseUnits[0].Amount;
+                AmountWithBreakdown authorixedAmount = authorizeOrderResult.PurchaseUnits[0].AmountWithBreakdown;
                 Console.WriteLine("Buyer:");
-                Console.WriteLine("\tEmail Address: {0}", authorizeOrderResult.Payer.EmailAddress);
+                Console.WriteLine("\tEmail Address: {0}", authorizeOrderResult.Payer.Email);
 
         Console.WriteLine("Capturing the payment...");
         var captureOrderResponse = CaptureOrderSample.CaptureOrder(authorizationId).Result;

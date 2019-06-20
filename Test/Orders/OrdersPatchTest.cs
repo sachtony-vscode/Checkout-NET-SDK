@@ -45,8 +45,8 @@ namespace PayPalCheckoutSdk.Orders.Test
 
             PurchaseUnit firstPurchaseUnit = getOrder.PurchaseUnits[0];
             Assert.Equal("test_ref_id1", firstPurchaseUnit.ReferenceId);
-            Assert.Equal("USD", firstPurchaseUnit.Amount.CurrencyCode);
-            Assert.Equal("100.00", firstPurchaseUnit.Amount.Value);
+            Assert.Equal("USD", firstPurchaseUnit.AmountWithBreakdown.CurrencyCode);
+            Assert.Equal("100.00", firstPurchaseUnit.AmountWithBreakdown.Value);
             Assert.Equal("added_description", firstPurchaseUnit.Description);
 
         }

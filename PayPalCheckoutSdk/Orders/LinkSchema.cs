@@ -66,12 +66,6 @@ namespace PayPalCheckoutSdk.Orders
         // public List<Link> Links;
 
         /// <summary>
-        /// The media type and context-encoding scheme.
-        /// </summary>
-        [DataMember(Name="media", EmitDefaultValue = false)]
-        public Media Media;
-
-        /// <summary>
         /// </summary>
         [DataMember(Name="not", EmitDefaultValue = false)]
         public T Not;

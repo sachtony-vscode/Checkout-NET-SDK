@@ -1,8 +1,8 @@
-// This class was generated on Tue, 04 Sep 2018 12:18:45 PDT by version 0.1.0-dev+904328-dirty of Braintree SDK Generator
-// TaxInformation.cs
-// @version 0.1.0-dev+904328-dirty
+// This class was generated on Tue, 21 May 2019 11:25:19 PDT by version 0.1.0-dev+8fcb5f of Braintree SDK Generator
+// TaxInfo.cs
+// @version 0.1.0-dev+8fcb5f
 // @type object
-// @data H4sIAAAAAAAC/6yRTUvDQBBA7/6KYS9eQrDgKTelFxG0aPAi0k6zk2Zxs7vObLSL9L9L0g8/2kMLHmd4TPLefqoyBVKFKnEJN6723GI03qlMPSEbnFu6w7YHVKZuKX0PY5KKTRjgQpUNQexPjMHXEBuCqpPoW+Icyh8TGAG04uHV+Q8HKAMbMPXgtY8NzCIup0bPAJ3eDtOYAs0AmYDprTNMOleZumLGtP7/i0w9EOp7Z5MqarRC/WKN7hYT9oE4GhJVPO/MJbJxi33h9ad/ae9W+/JbwXPZdMjhsQvBcyQNtefBc4JpgrbXbclFaCk2XoN3NuVQpmAqtDZlA7qJaQRGI6gaZKwisYD1bjHcM06bd6M7tDKkGl0exOadGEciJCcVi9z9CeY6a1fZkdWGBzuQbrs/oh/06IkR/8HwZXX2BQAA//8=
+// @data H4sIAAAAAAAC/6yRT0vDQBBH736KYS9eQrDgKTelFxG0aPAi0k6zk2Zxs7vObLSL9LtL0j9ordCCx/nlkfBePlWZAqlCRVxOjau9ytQTssG5pTts957cUtqMKlNjkopNiMY7VaiyIYi4hJsx+BpiQ1B1En1LnEP57QIjgFY8vDr/4QBlYAOmHrz2sYHZ8EE9A3R6e0xjCjQDZAKmt84w6Vxl6ooZ01rgIlMPhPre2aSKGq1QP6zR3TBhH4ijIVHF805dIhu3+ENc/9DeTb/lt4LnsumQw2MXgudIGmrPg+cE0wRtr9uSi9BSbLwG72zKoUzBVGhtygZ0E9MIjEZQNchYRWIB691ieJ9x2rwb3aGVIdXo8iA278Q4EiE5qVjkbi+Y66xdZUdWG37YgXTb/Yh+0KMnRvwHw5fV2RcAAAD//w==
 // DO NOT EDIT
 using System.Runtime.Serialization;
 using System.Collections.Generic;
@@ -14,12 +14,12 @@ namespace PayPalCheckoutSdk.Orders
     /// The tax ID of the customer. The customer is also known as the payer. Both `tax_id` and `tax_id_type` are required.
     /// </summary>
     [DataContract]
-    public class TaxInformation
+    public class TaxInfo
     {
         /// <summary>
 	    /// Required default constructor
 		/// </summary>
-        public TaxInformation() {}
+        public TaxInfo() {}
 
         /// <summary>
         /// REQUIRED
