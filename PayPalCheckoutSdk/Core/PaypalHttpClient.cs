@@ -57,7 +57,7 @@ namespace PayPalCheckoutSdk.Core
 
             private HttpResponse fetchAccessToken()
             {
-                //create a new client for acceess token.
+                //create a new client for access token.
                 HttpClient AccessTokenClient = new HttpClient(environment);
                 AccessTokenRequest request = new AccessTokenRequest(environment, refreshToken);
                 //make fetch access token call sync to avoid deadlock.
