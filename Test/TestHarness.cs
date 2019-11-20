@@ -1,6 +1,6 @@
 using System;
 using PayPalCheckoutSdk.Core;
-using BraintreeHttp;
+using PayPalHttp;
 using Xunit;
 [assembly: CollectionBehavior(MaxParallelThreads = -1)]
 

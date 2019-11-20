@@ -6,7 +6,7 @@ __Welcome to PayPal Dotnet SDK__. This repository contains PayPal's Dotnet SDK a
 
 This is a part of the next major PayPal SDK. It includes a simplified interface to only provide simple model objects and blueprints for HTTP calls. This repo currently contains functionality for PayPal Checkout APIs which includes [Orders V2](https://developer.paypal.com/docs/api/orders/v2/) and [Payments V2](https://developer.paypal.com/docs/api/payments/v2/).
 
-Please refer to the [PayPal Checkout Integration Guide](https://developer.paypal.com/docs/checkout/) for more information. Also refer to [Setup your SDK](https://developer.paypal.com/docs/checkout/reference/server-integration/setup-sdk/) for additional information about setting up the SDK's. 
+Please refer to the [PayPal Checkout Integration Guide](https://developer.paypal.com/docs/checkout/) for more information. Also refer to [Setup your SDK](https://developer.paypal.com/docs/checkout/reference/server-integration/setup-sdk/) for additional information about setting up the SDK's.
 
 
 ## Prerequisites
@@ -15,7 +15,7 @@ Please refer to the [PayPal Checkout Integration Guide](https://developer.paypal
 
 An environment which supports TLS 1.2 (see the TLS-update site for more information)
 
-BraintreeHttp-Dotnet 0.3.0
+PayPalHttp 1.0.0
 
 ## Usage
 
@@ -32,11 +32,11 @@ Get client ID and client secret by going to https://developer.paypal.com/develop
 using System;
 using PayPalCheckoutSdk.Core;
 using PayPalCheckoutSdk.Orders;
-using BraintreeHttp;
+using PayPalHttp;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-public class CaptureOrderSample 
+public class CaptureOrderSample
 {
     static String clientId = "PAYPAL-CLIENT-ID";
     static String secret = "PAYPAL-CLIENT-SECRET";

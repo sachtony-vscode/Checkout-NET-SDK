@@ -4,7 +4,7 @@ using System.Text;
 using System.Net.Http;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using BraintreeHttp;
+using PayPalHttp;
 using Xunit;
 using Xunit.Abstractions;
 using PayPalCheckoutSdk.Test;

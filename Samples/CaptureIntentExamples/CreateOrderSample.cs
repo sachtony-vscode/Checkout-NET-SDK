@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 using PayPalCheckoutSdk.Core;
 using PayPalCheckoutSdk.Orders;
-using BraintreeHttp;
+using PayPalHttp;
 
 namespace Samples.CaptureIntentExamples
 {

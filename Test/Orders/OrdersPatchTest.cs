@@ -3,7 +3,7 @@ using System.IO;
 using System.Text;
 using System.Net.Http;
 using System.Collections.Generic;
-using BraintreeHttp;
+using PayPalHttp;
 using Xunit;
 using PayPalCheckoutSdk.Test;
 using static PayPalCheckoutSdk.Test.TestHarness;
