@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using BraintreeHttp;
+using PayPalHttp;
 using PayPalCheckoutSdk.Core;
 using PayPalCheckoutSdk.Orders;
 using Samples.AuthorizeIntentExamples;
