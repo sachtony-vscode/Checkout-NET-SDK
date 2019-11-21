@@ -1,13 +1,13 @@
 using System;
 using System.Text;
-using BraintreeHttp;
+using PayPalHttp;
 
 namespace PayPalCheckoutSdk.Core
 {
     /// <summary>
     /// Recommended to use SandboxEnvironment for testing or LiveEnvironment for production.
     /// </summary>
-    public class PayPalEnvironment : BraintreeHttp.Environment
+    public class PayPalEnvironment : PayPalHttp.Environment
     {
         private string baseUrl;
         private string clientId;

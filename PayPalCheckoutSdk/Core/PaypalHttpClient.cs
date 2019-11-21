@@ -1,7 +1,6 @@
 using System.Threading.Tasks;
 using System.Net.Http.Headers;
-using BraintreeHttp;
-
+using PayPalHttp;
 namespace PayPalCheckoutSdk.Core
 {
     public class PayPalHttpClient : HttpClient
