@@ -132,7 +132,7 @@ You may use the client id and secret above for demonstration purposes.
 
 ## Samples
 
-You can start off by trying out [creating and capturing an order](/Samples/CaptureIntentExamples/RunAll.java).
+You can start off by trying out [creating and capturing an order](/Samples/CaptureIntentExamples/RunAllCaptureIntentFlow.cs).
 
 To try out different samples for both create and authorize intent head to [this link](/Samples).
 
