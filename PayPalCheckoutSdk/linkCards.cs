@@ -19,7 +19,7 @@ namespace Program
             var card = {
               "virtual Cards",
               "Physical cards"         
-            }
+            };
             var identity = "Card";
             var Merchant = "MerchantID";
             var verification = Paypal.Service.VerificationResource.Create(
