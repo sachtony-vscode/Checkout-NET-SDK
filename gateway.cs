@@ -1,1 +1,1 @@
-BraintreeGateway gateway = new BraintreeGateway(useYourAccessToken);
+BraintreeGateway gateway = new BraintreeGateway(access_token$sandbox$59yr785rb2vgqqq2$f6a81d76e015ed93e5bd108a95c42a02);
