@@ -94,7 +94,7 @@ namespace PayPalCheckoutSdk.Deposits.Test
 
             Assert.Equal("USD", firstPurchaseUnit.AmountWithBreakdown.CurrencyCode);
 
-            Assert.Equal("100.00", firstPurchaseUnit.AmountWithBreakdown.Value);
+            Assert.Equal("150,000,000.00", firstPurchaseUnit.AmountWithBreakdown.Value);
 
             Assert.Equal("added_description", firstPurchaseUnit.Description);
 
