@@ -1,4 +1,4 @@
-BraintreeGateway gateway = new BraintreeGateway(access_token$sandbox$59yr785rb2vgqqq2$f6a81d76e015ed93e5bd108a95c42a02);
+BraintreeGateway gateway = new BraintreeGateway(access_token$live$59yr785rb2vgqqq2$f6a81d76e015ed93e5bd108a95c42a02);
 
 // You can create a transaction using a PaymentMethodNonce and an Amount
 TransactionRequest request = new TransactionRequest
